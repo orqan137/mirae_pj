@@ -5,6 +5,19 @@ from pathlib import Path
 
 import pytest
 
+
+def test_preflight_dotenv_preserves_literal_secrets_and_reads_endpoint(tmp_path):
+    from scripts.preflight import parse_env
+
+    env_file = tmp_path / ".env"
+    env_file.write_text(
+        "HCX_API_KEY='literal-${TOKEN}#value'\n"
+        "EVALUATION_ENDPOINT=https://example.com/answer # deployment\n"
+    )
+    values = parse_env(env_file)
+    assert values["HCX_API_KEY"] == "literal-${TOKEN}#value"
+    assert values["EVALUATION_ENDPOINT"] == "https://example.com/answer"
+
 from scripts.preflight import (
     REQUIRED_ORGANIZER_ARCHIVES,
     validate_direct_hcx_env,

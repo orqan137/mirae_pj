@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
+from dotenv import dotenv_values
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
@@ -37,14 +39,11 @@ SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 
 
 def parse_env(path: Path) -> dict[str, str]:
-    values: dict[str, str] = {}
-    for raw_line in path.read_text(encoding="utf-8").splitlines():
-        line = raw_line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", maxsplit=1)
-        values[key.strip()] = value.strip().strip('"').strip("'")
-    return values
+    return {
+        key: value
+        for key, value in dotenv_values(path, interpolate=False).items()
+        if value is not None
+    }
 
 
 def sha256_file(path: Path) -> str:
@@ -60,7 +59,7 @@ def validate_evaluation_endpoint(endpoint: str) -> list[str]:
 
     errors: list[str] = []
     if "YOUR_" in endpoint:
-        errors.append("README.md still contains the placeholder endpoint")
+        errors.append("EVALUATION_ENDPOINT still contains a placeholder")
     parsed = urlparse(endpoint)
     if parsed.scheme not in {"http", "https"} or not parsed.hostname:
         errors.append("EVALUATION_ENDPOINT must be an absolute HTTP(S) URL")
@@ -166,17 +165,11 @@ def main() -> int:
     args = parser.parse_args()
     errors: list[str] = []
 
-    readme = (PROJECT_ROOT / "README.md").read_text(encoding="utf-8")
-    match = re.search(r"^EVALUATION_ENDPOINT=(\S+)$", readme, flags=re.MULTILINE)
-    if not match:
-        errors.append("README.md has no machine-readable EVALUATION_ENDPOINT")
-    else:
-        errors.extend(validate_evaluation_endpoint(match.group(1)))
-
     if not args.env_file.exists():
         errors.append(f"production env file is missing: {args.env_file}")
     else:
         env = parse_env(args.env_file)
+        errors.extend(validate_evaluation_endpoint(env.get("EVALUATION_ENDPOINT", "")))
         if env.get("APP_ENV") != "production":
             errors.append("APP_ENV must be production")
         backend = env.get("AGENT_BACKEND")

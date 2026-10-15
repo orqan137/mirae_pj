@@ -21,6 +21,9 @@
 
 ## 평가용 API
 
+아래 주소는 예시입니다. 실제 주소는 `.env`의 `EVALUATION_ENDPOINT`에만 설정하며,
+배포 점검 스크립트도 그 값을 읽습니다.
+
 ```text
 https://your-server.example/answer
 ```
@@ -117,6 +120,7 @@ cp .env.example .env
 ## 테스트
 
 검색 코퍼스·상품 색인에 의존하는 테스트와 벤치마크는 해당 자료를 별도로 준비해야 합니다.
+원본 무결성 검사에는 `docs/official/`의 원본 자료와 문서 카탈로그도 필요합니다.
 설정 관련 테스트만 실행하려면 `.venv/bin/python -m pytest tests/test_config.py`를 사용합니다.
 배포 환경변수는 `.env`보다 우선하며, `.env` 값의 `${...}` 보간은 수행하지 않습니다.
 
