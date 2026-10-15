@@ -1,0 +1,2 @@
+[DOC 1] source_id=doc41 source_path=일반문서/doc41.docx page=1 chunk=1 citation_id=doc41:page=1:chunk=1 title=연금 세액공제
+연금저축 세액공제율은 문서상 16.5%입니다.

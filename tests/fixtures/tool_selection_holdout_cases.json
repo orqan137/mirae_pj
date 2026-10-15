@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "TOOL-SYSTEM-PARAPHRASE-001",
+      "question": "확정급여형과 확정기여형은 운용 책임이 어떻게 다른가요?",
+      "expected_route_labels": ["system"],
+      "expected_source_groups": ["general"],
+      "expected_tools": ["general_retriever"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-TAX-EXPLANATION-001",
+      "question": "IRP 납입액의 세제 혜택과 공제 한도를 설명해 주세요.",
+      "expected_route_labels": ["system", "tax", "combined"],
+      "expected_source_groups": ["general"],
+      "expected_tools": ["general_retriever"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-TRANSFER-PARAPHRASE-001",
+      "question": "개인형퇴직연금 계좌를 다른 금융사로 옮기려면 무엇을 해야 하나요?",
+      "expected_route_labels": ["system", "procedure", "combined"],
+      "expected_source_groups": ["general"],
+      "expected_tools": ["general_retriever"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-WITHDRAWAL-PARAPHRASE-001",
+      "question": "퇴직연금에서 돈을 빼려면 어떤 요건과 서류가 필요한가요?",
+      "expected_route_labels": ["system", "procedure", "combined"],
+      "expected_source_groups": ["general"],
+      "expected_tools": ["general_retriever"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-PRODUCT-AXES-001",
+      "question": "KR510902511M의 총비용과 투자위험등급을 알려주세요.",
+      "expected_route_labels": ["product_explanation"],
+      "expected_source_groups": ["product"],
+      "expected_tools": ["product_retriever"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-IMPLICIT-FEE-COMPARISON-001",
+      "question": "KR510902511M와 KR5152420028 중 총보수가 더 낮은 쪽을 알려주세요.",
+      "expected_route_labels": ["product_comparison"],
+      "expected_source_groups": ["product"],
+      "expected_tools": ["product_retriever", "product_comparator"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-IMPLICIT-RISK-COMPARISON-001",
+      "question": "KR510902511M하고 KR5152420028 가운데 위험등급이 낮은 것은 무엇인가요?",
+      "expected_route_labels": ["product_comparison"],
+      "expected_source_groups": ["product"],
+      "expected_tools": ["product_retriever", "product_comparator"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-INCOMPLETE-RECOMMENDATION-001",
+      "question": "IRP에 넣을 안정적인 펀드 하나를 골라주세요.",
+      "expected_route_labels": ["system", "product_explanation", "conditional_recommendation"],
+      "expected_source_groups": ["general", "product"],
+      "expected_tools": ["general_retriever", "product_retriever", "suitability_prefilter"],
+      "expected_needs_conditions": true,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-COMPLETE-RECOMMENDATION-001",
+      "question": "IRP 계좌에서 15년 투자하고 손실을 감내할 수 있습니다. 중도인출 계획은 없고 노후자금 성장을 위한 펀드를 추천해 주세요.",
+      "expected_route_labels": ["system", "product_explanation", "conditional_recommendation"],
+      "expected_source_groups": ["general", "product"],
+      "expected_tools": ["general_retriever", "product_retriever", "suitability_prefilter"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-TAX-CALCULATION-001",
+      "question": "총급여 5,500만원이고 IRP에 900만원을 냈습니다. 세액공제액이 얼마인지 계산해 주세요.",
+      "expected_route_labels": ["system", "tax", "combined"],
+      "expected_source_groups": ["general"],
+      "expected_tools": ["general_retriever", "pension_tax_credit_calculator"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": true
+    },
+    {
+      "case_id": "TOOL-CALCULATION-RELEVANCE-NEGATIVE-001",
+      "question": "IRP 세액공제 계산 방식과 공제 한도만 설명해 주세요.",
+      "expected_route_labels": ["system", "tax", "combined"],
+      "expected_source_groups": ["general"],
+      "expected_tools": ["general_retriever"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-COMPOUND-COMPARISON-TRANSFER-001",
+      "question": "KR510902511M와 KR5152420028 중 총보수가 더 낮은 쪽을 알려주세요. 그리고 IRP를 다른 금융사로 옮길 때 준비할 서류도 알려주세요.",
+      "expected_route_labels": ["system", "procedure", "product_comparison", "combined"],
+      "expected_source_groups": ["general", "product"],
+      "expected_tools": ["general_retriever", "product_retriever", "product_comparator"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    },
+    {
+      "case_id": "TOOL-VAGUE-PENSION-001",
+      "question": "노후에 받을 연금을 어떻게 준비해야 하는지 큰 흐름을 설명해 주세요.",
+      "expected_route_labels": ["combined"],
+      "expected_source_groups": ["general"],
+      "expected_tools": ["general_retriever"],
+      "expected_needs_conditions": false,
+      "expected_requires_calculation": false
+    }
+  ]
+}

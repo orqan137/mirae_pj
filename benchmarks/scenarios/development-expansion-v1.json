@@ -1,0 +1,1804 @@
+{
+  "schema_version": 1,
+  "pack_id": "mirae-pension-development-expansion-v1",
+  "split": "development",
+  "panel": "development",
+  "pack_fingerprint": "814d8db563b36be07e9364383d2f192d84b3011997d8c7e54be64dcb64a69c71",
+  "corpus_manifest_sha256": "3e7ad6b0a8f9a9de783396163ab31b782bfefe50a197c30c535e7992e963de17",
+  "cases": [
+    {
+      "case_id": "DEV-NEW-001",
+      "domain": "plan_design_governance",
+      "semantic_family_id": "retirement_plan_rule_nonadverse_vs_adverse_change",
+      "template_family_id": "rule_change_formal_nonadverse",
+      "source_lineage_family": "official_doc12_rule_amendment",
+      "scenario_axes": [
+        "audience:employer_admin",
+        "change:non_adverse",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "employer_admin"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "회사 퇴직연금 담당자입니다. 기존 퇴직연금규약의 일반 내용을 근로자에게 불리하지 않게 변경할 때 근로자대표의 의견을 들어야 하나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "퇴직연금규약",
+        "근로자대표",
+        "의견청취"
+      ],
+      "forbidden_query_terms": [
+        "DB",
+        "DC",
+        "가입자교육"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc12",
+          "locator": "page=3",
+          "chunk_index": 3,
+          "content_sha256": "2e6bb8cd4f8ca1342a02181a0114048f94874f9e01906ba3a6506eeaa3ff3db0"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-002",
+      "domain": "plan_design_governance",
+      "semantic_family_id": "retirement_plan_rule_nonadverse_vs_adverse_change",
+      "template_family_id": "rule_change_colloquial_nonadverse",
+      "source_lineage_family": "official_doc12_rule_amendment",
+      "scenario_axes": [
+        "audience:employer_admin",
+        "change:non_adverse",
+        "surface:colloquial"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "employer_admin"
+      },
+      "test_type": "INV",
+      "parent_case_id": "DEV-NEW-001",
+      "relation": "semantic_invariant",
+      "question": "회사 퇴직연금 담당자예요. 퇴직연금 규약을 직원에게 불리하지 않게 고치려는데, 직원 대표의 생각을 듣는 절차가 필요한가요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "퇴직연금규약",
+        "근로자대표",
+        "의견청취"
+      ],
+      "forbidden_query_terms": [
+        "DB",
+        "DC",
+        "가입자교육"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc12",
+          "locator": "page=3",
+          "chunk_index": 3,
+          "content_sha256": "2e6bb8cd4f8ca1342a02181a0114048f94874f9e01906ba3a6506eeaa3ff3db0"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-003",
+      "domain": "plan_design_governance",
+      "semantic_family_id": "retirement_plan_rule_nonadverse_vs_adverse_change",
+      "template_family_id": "rule_change_formal_adverse",
+      "source_lineage_family": "official_doc12_rule_amendment",
+      "scenario_axes": [
+        "audience:employer_admin",
+        "change:adverse",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "employer_admin"
+      },
+      "test_type": "DIR",
+      "parent_case_id": "DEV-NEW-001",
+      "relation": "directional_contrast",
+      "question": "회사 퇴직연금 담당자입니다. 기존 퇴직연금규약을 근로자에게 불리하게 변경할 때 근로자대표 동의가 필요한가요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "퇴직연금규약",
+        "근로자대표",
+        "불리",
+        "동의"
+      ],
+      "forbidden_query_terms": [
+        "불리하지 않게",
+        "DB",
+        "DC",
+        "가입자교육"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc12",
+          "locator": "page=3",
+          "chunk_index": 3,
+          "content_sha256": "2e6bb8cd4f8ca1342a02181a0114048f94874f9e01906ba3a6506eeaa3ff3db0"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-004",
+      "domain": "contribution_onboarding",
+      "semantic_family_id": "irp_contribution_cancellation_first_deposit_exception",
+      "template_family_id": "contribution_cancel_formal_regular",
+      "source_lineage_family": "official_doc6_irp_contribution_operations",
+      "scenario_axes": [
+        "audience:operations_staff",
+        "first_deposit:false",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "operations_staff"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "증권사 퇴직연금 업무담당자입니다. 계약의 최초 입금이 아닌 개인IRP 가입자부담금을 오늘 입금했다면 오늘 안에 입금취소를 신청할 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "개인IRP",
+        "가입자부담금",
+        "입금취소"
+      ],
+      "forbidden_query_terms": [
+        "ISA",
+        "지연이자"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc6",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "a5f30058974a993b30da320e64cb00bb2cfd4a78409dbe102798e663a42b9ff9"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-005",
+      "domain": "contribution_onboarding",
+      "semantic_family_id": "irp_contribution_cancellation_first_deposit_exception",
+      "template_family_id": "contribution_cancel_colloquial_regular",
+      "source_lineage_family": "official_doc6_irp_contribution_operations",
+      "scenario_axes": [
+        "audience:operations_staff",
+        "first_deposit:false",
+        "surface:colloquial"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "operations_staff"
+      },
+      "test_type": "INV",
+      "parent_case_id": "DEV-NEW-004",
+      "relation": "semantic_invariant",
+      "question": "증권사 퇴직연금 업무담당자입니다. 개인형 IRP에 처음 넣는 돈은 아니고, 오늘 넣은 가입자 부담금은 당일 중 취소 요청할 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "개인IRP",
+        "가입자부담금",
+        "입금취소"
+      ],
+      "forbidden_query_terms": [
+        "ISA",
+        "지연이자"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc6",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "a5f30058974a993b30da320e64cb00bb2cfd4a78409dbe102798e663a42b9ff9"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-006",
+      "domain": "contribution_onboarding",
+      "semantic_family_id": "irp_contribution_cancellation_first_deposit_exception",
+      "template_family_id": "contribution_cancel_formal_first",
+      "source_lineage_family": "official_doc6_irp_contribution_operations",
+      "scenario_axes": [
+        "audience:operations_staff",
+        "first_deposit:true",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "operations_staff"
+      },
+      "test_type": "DIR",
+      "parent_case_id": "DEV-NEW-004",
+      "relation": "directional_contrast",
+      "question": "증권사 퇴직연금 업무담당자입니다. 개인IRP 계약의 최초 부담금 입금도 당일이면 입금취소할 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "개인IRP",
+        "최초 부담금",
+        "입금취소"
+      ],
+      "forbidden_query_terms": [
+        "최초 입금이 아닌",
+        "ISA",
+        "지연이자"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc6",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "a5f30058974a993b30da320e64cb00bb2cfd4a78409dbe102798e663a42b9ff9"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-007",
+      "domain": "retirement_payout",
+      "semantic_family_id": "actual_pension_receipt_year_accrual",
+      "template_family_id": "actual_year_formal_no_withdrawal",
+      "source_lineage_family": "official_doc40_actual_receipt_year",
+      "scenario_axes": [
+        "audience:customer",
+        "actual_withdrawal:none",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "연금계좌를 개시해 두었지만 올해 한 번도 인출하지 않았다면 연금실제수령연차가 1년 쌓이나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "연금실제수령연차",
+        "실제 인출"
+      ],
+      "forbidden_query_terms": [
+        "연금수령한도",
+        "만55세",
+        "가입 5년"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc40",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "e34b9a3ec13f7fc0ac76be223f8d4cc11ee3d10643451e1b0fa966317c85a25f"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-008",
+      "domain": "retirement_payout",
+      "semantic_family_id": "actual_pension_receipt_year_accrual",
+      "template_family_id": "actual_year_colloquial_no_withdrawal",
+      "source_lineage_family": "official_doc40_actual_receipt_year",
+      "scenario_axes": [
+        "audience:customer",
+        "actual_withdrawal:none",
+        "surface:colloquial"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "INV",
+      "parent_case_id": "DEV-NEW-007",
+      "relation": "semantic_invariant",
+      "question": "연금은 개시해 뒀지만 올해 계좌에서 돈을 한 번도 안 뺐어요. 그래도 실제 수령 연차가 올라가나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "연금실제수령연차",
+        "실제 인출"
+      ],
+      "forbidden_query_terms": [
+        "연금수령한도",
+        "만55세",
+        "가입 5년"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc40",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "e34b9a3ec13f7fc0ac76be223f8d4cc11ee3d10643451e1b0fa966317c85a25f"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-009",
+      "domain": "retirement_payout",
+      "semantic_family_id": "actual_pension_receipt_year_accrual",
+      "template_family_id": "actual_year_formal_minimum_withdrawal",
+      "source_lineage_family": "official_doc40_actual_receipt_year",
+      "scenario_axes": [
+        "audience:customer",
+        "actual_withdrawal:10000_KRW",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "DIR",
+      "parent_case_id": "DEV-NEW-007",
+      "relation": "directional_contrast",
+      "question": "연금계좌 개시 후 올해 1만원을 연금으로 실제 인출했다면 올해 연금실제수령연차가 쌓이나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "연금실제수령연차",
+        "실제 인출",
+        "1만원"
+      ],
+      "forbidden_query_terms": [
+        "한 번도 인출하지 않",
+        "연금수령한도",
+        "만55세",
+        "가입 5년"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc40",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "e34b9a3ec13f7fc0ac76be223f8d4cc11ee3d10643451e1b0fa966317c85a25f"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-010",
+      "domain": "withdrawal_liquidity",
+      "semantic_family_id": "disaster_withdrawal_plan_eligibility",
+      "template_family_id": "disaster_formal_irp",
+      "source_lineage_family": "official_doc50_disaster_withdrawal",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:personal_IRP",
+        "damage:rented_home_half_destroyed",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "특별재난지역으로 선포된 사회재난 때문에 제가 임차해 사는 주거시설이 반파됐습니다. 개인IRP 재난 중도인출은 언제까지 신청하고 어떤 서류를 준비해야 하나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "재난",
+        "중도인출",
+        "개인IRP"
+      ],
+      "forbidden_query_terms": [
+        "주택 구입",
+        "요양"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc50",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "93121a8905f974ed0525677cd8e65128790427acabcf205fc0904813e8634280"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-011",
+      "domain": "withdrawal_liquidity",
+      "semantic_family_id": "disaster_withdrawal_plan_eligibility",
+      "template_family_id": "disaster_colloquial_irp",
+      "source_lineage_family": "official_doc50_disaster_withdrawal",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:personal_IRP",
+        "damage:rented_home_half_destroyed",
+        "surface:colloquial"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "INV",
+      "parent_case_id": "DEV-NEW-010",
+      "relation": "semantic_invariant",
+      "question": "특별재난지역으로 선포된 사회재난으로 세 들어 사는 집이 반파됐습니다. 개인형 IRP에서 재난 중도인출하려면 기한과 증빙이 어떻게 되나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "재난",
+        "중도인출",
+        "개인IRP"
+      ],
+      "forbidden_query_terms": [
+        "주택 구입",
+        "요양"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc50",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "93121a8905f974ed0525677cd8e65128790427acabcf205fc0904813e8634280"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-012",
+      "domain": "withdrawal_liquidity",
+      "semantic_family_id": "disaster_withdrawal_plan_eligibility",
+      "template_family_id": "disaster_formal_db",
+      "source_lineage_family": "official_doc50_disaster_withdrawal",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:DB",
+        "damage:rented_home_half_destroyed",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "DIR",
+      "parent_case_id": "DEV-NEW-010",
+      "relation": "directional_contrast",
+      "question": "특별재난지역으로 선포된 사회재난 때문에 제가 임차해 사는 주거시설이 반파됐습니다. DB 재난 중도인출은 언제까지 신청하고 어떤 서류를 준비해야 하나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "재난",
+        "중도인출",
+        "DB"
+      ],
+      "forbidden_query_terms": [
+        "개인IRP",
+        "주택 구입",
+        "요양"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc50",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "93121a8905f974ed0525677cd8e65128790427acabcf205fc0904813e8634280"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-013",
+      "domain": "investing_operations",
+      "semantic_family_id": "qualifying_tdf_plan_limit",
+      "template_family_id": "tdf_formal_dc",
+      "source_lineage_family": "official_doc58_tdf_limit",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:DC",
+        "qualification:regulator_criteria_met",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "감독원 기준을 충족한 TDF라면 DC 퇴직연금 적립금의 100%까지 투자할 수 있나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "procedure",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "TDF",
+        "DC",
+        "100%"
+      ],
+      "forbidden_query_terms": [
+        "ETF",
+        "디폴트옵션"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc58",
+          "locator": "page=3",
+          "chunk_index": 3,
+          "content_sha256": "a39d21d7d5addb42782976d350e892663dce12cb5e06d01d71587106681de73d"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-014",
+      "domain": "investing_operations",
+      "semantic_family_id": "qualifying_tdf_plan_limit",
+      "template_family_id": "tdf_colloquial_dc",
+      "source_lineage_family": "official_doc58_tdf_limit",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:DC",
+        "qualification:regulator_criteria_met",
+        "surface:colloquial"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "INV",
+      "parent_case_id": "DEV-NEW-013",
+      "relation": "semantic_invariant",
+      "question": "확정기여형 퇴직연금에서 요건을 갖춘 타깃데이트펀드 하나로 적립금을 전부 운용해도 되나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "procedure",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "TDF",
+        "DC",
+        "100%"
+      ],
+      "forbidden_query_terms": [
+        "ETF",
+        "디폴트옵션"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc58",
+          "locator": "page=3",
+          "chunk_index": 3,
+          "content_sha256": "a39d21d7d5addb42782976d350e892663dce12cb5e06d01d71587106681de73d"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-015",
+      "domain": "investing_operations",
+      "semantic_family_id": "qualifying_tdf_plan_limit",
+      "template_family_id": "tdf_formal_db",
+      "source_lineage_family": "official_doc58_tdf_limit",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:DB",
+        "qualification:regulator_criteria_met",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "DIR",
+      "parent_case_id": "DEV-NEW-013",
+      "relation": "directional_contrast",
+      "question": "감독원 기준을 충족한 TDF라면 DB 퇴직연금 적립금의 100%까지 투자할 수 있나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "procedure",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "TDF",
+        "DB",
+        "100%"
+      ],
+      "forbidden_query_terms": [
+        "DC",
+        "ETF",
+        "디폴트옵션"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc58",
+          "locator": "page=3",
+          "chunk_index": 3,
+          "content_sha256": "a39d21d7d5addb42782976d350e892663dce12cb5e06d01d71587106681de73d"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-016",
+      "domain": "investing_operations",
+      "semantic_family_id": "mp_subscription_plan_eligibility",
+      "template_family_id": "mp_formal_personal_irp",
+      "source_lineage_family": "official_doc54_mp_subscription",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:personal_IRP",
+        "service:MP_subscription",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "미래에셋증권 개인형IRP 가입자는 MP 구독 서비스 신청 대상인가요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "MP 구독 서비스",
+        "개인형IRP"
+      ],
+      "forbidden_query_terms": [
+        "디폴트옵션",
+        "ETF 투자한도"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc54",
+          "locator": "page=4",
+          "chunk_index": 3,
+          "content_sha256": "6747b32ee8c179948db4ccc0b937d516d2dae6cb3e53df396ef1e0e2c09d5e6f"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-017",
+      "domain": "investing_operations",
+      "semantic_family_id": "mp_subscription_plan_eligibility",
+      "template_family_id": "mp_colloquial_personal_irp",
+      "source_lineage_family": "official_doc54_mp_subscription",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:personal_IRP",
+        "service:MP_subscription",
+        "surface:colloquial"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "INV",
+      "parent_case_id": "DEV-NEW-016",
+      "relation": "semantic_invariant",
+      "question": "미래에셋 개인형 퇴직연금 계좌 고객도 MP 구독을 신청할 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "MP 구독 서비스",
+        "개인형IRP"
+      ],
+      "forbidden_query_terms": [
+        "디폴트옵션",
+        "ETF 투자한도"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc54",
+          "locator": "page=4",
+          "chunk_index": 3,
+          "content_sha256": "6747b32ee8c179948db4ccc0b937d516d2dae6cb3e53df396ef1e0e2c09d5e6f"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-018",
+      "domain": "investing_operations",
+      "semantic_family_id": "mp_subscription_plan_eligibility",
+      "template_family_id": "mp_formal_db",
+      "source_lineage_family": "official_doc54_mp_subscription",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:DB",
+        "service:MP_subscription",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "DIR",
+      "parent_case_id": "DEV-NEW-016",
+      "relation": "directional_contrast",
+      "question": "미래에셋증권 DB 가입자는 MP 구독 서비스 신청 대상인가요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "MP 구독 서비스",
+        "DB"
+      ],
+      "forbidden_query_terms": [
+        "개인형IRP",
+        "디폴트옵션",
+        "ETF 투자한도"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc54",
+          "locator": "page=4",
+          "chunk_index": 3,
+          "content_sha256": "6747b32ee8c179948db4ccc0b937d516d2dae6cb3e53df396ef1e0e2c09d5e6f"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-019",
+      "domain": "investing_operations",
+      "semantic_family_id": "listed_pension_product_trading_hours",
+      "template_family_id": "listed_hours_formal",
+      "source_lineage_family": "official_doc56_listed_product_trading",
+      "scenario_axes": [
+        "audience:customer",
+        "products:ETF_ETN_listed_REIT",
+        "time_scope:all",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "퇴직연금 매매가능 상품으로 등록된 ETF·ETN·상장 리츠는 몇 시에 거래할 수 있고 시간외 거래도 가능한가요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "ETF",
+        "ETN",
+        "상장 리츠",
+        "정규장",
+        "시간외 거래"
+      ],
+      "forbidden_query_terms": [
+        "ETF 투자한도",
+        "TDF",
+        "세금",
+        "수수료"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc56",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "d7f912b9c072c36828bfdd256f6cfed47a65b68005e4ea3f0cad1c400dcedf22"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-020",
+      "domain": "investing_operations",
+      "semantic_family_id": "listed_pension_product_trading_hours",
+      "template_family_id": "listed_hours_colloquial",
+      "source_lineage_family": "official_doc56_listed_product_trading",
+      "scenario_axes": [
+        "audience:customer",
+        "products:ETF_ETN_listed_REIT",
+        "time_scope:all",
+        "surface:colloquial"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "INV",
+      "parent_case_id": "DEV-NEW-019",
+      "relation": "semantic_invariant",
+      "question": "퇴직연금에서 매매 가능하도록 등록된 ETF나 ETN, 상장 리츠를 장 마감 뒤에도 사고팔 수 있나요? 거래 가능한 정규장 시간도 알려주세요.",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "ETF",
+        "ETN",
+        "상장 리츠",
+        "정규장",
+        "시간외 거래"
+      ],
+      "forbidden_query_terms": [
+        "ETF 투자한도",
+        "TDF",
+        "세금",
+        "수수료"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc56",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "d7f912b9c072c36828bfdd256f6cfed47a65b68005e4ea3f0cad1c400dcedf22"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-021",
+      "domain": "taxation",
+      "semantic_family_id": "executive_retirement_income_cap_irp_eligibility",
+      "template_family_id": "executive_cap_formal_excess",
+      "source_lineage_family": "official_doc45_executive_retirement_income",
+      "scenario_axes": [
+        "audience:customer",
+        "amount_scope:above_cap",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "임원 퇴직금 중 임원퇴직소득 한도 초과분도 IRP에 입금해서 과세이연할 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "tax",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "임원퇴직소득 한도",
+        "한도 초과분",
+        "IRP",
+        "과세이연"
+      ],
+      "forbidden_query_terms": [
+        "중도인출",
+        "주택 구입",
+        "DB",
+        "DC"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc45",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "4e59c0b90f1f29d402bb44c1bb4683933b307ee75b29ac929340239384a910e9"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-022",
+      "domain": "taxation",
+      "semantic_family_id": "executive_retirement_income_cap_irp_eligibility",
+      "template_family_id": "executive_cap_colloquial_excess",
+      "source_lineage_family": "official_doc45_executive_retirement_income",
+      "scenario_axes": [
+        "audience:customer",
+        "amount_scope:above_cap",
+        "surface:colloquial"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "INV",
+      "parent_case_id": "DEV-NEW-021",
+      "relation": "semantic_invariant",
+      "question": "임원 퇴직금이 세법상 인정되는 한도를 넘으면, 넘는 돈까지 IRP로 옮겨 세금을 미룰 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "tax",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "임원퇴직소득 한도",
+        "한도 초과분",
+        "IRP",
+        "과세이연"
+      ],
+      "forbidden_query_terms": [
+        "중도인출",
+        "주택 구입",
+        "DB",
+        "DC"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc45",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "4e59c0b90f1f29d402bb44c1bb4683933b307ee75b29ac929340239384a910e9"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-023",
+      "domain": "taxation",
+      "semantic_family_id": "executive_retirement_income_cap_irp_eligibility",
+      "template_family_id": "executive_cap_formal_within",
+      "source_lineage_family": "official_doc45_executive_retirement_income",
+      "scenario_axes": [
+        "audience:customer",
+        "amount_scope:within_cap",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "DIR",
+      "parent_case_id": "DEV-NEW-021",
+      "relation": "directional_contrast",
+      "question": "임원 퇴직금 중 임원퇴직소득 한도 이내의 퇴직소득 과세분은 IRP에 입금해서 과세이연할 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "tax",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "임원퇴직소득 한도",
+        "한도 이내",
+        "퇴직소득",
+        "IRP",
+        "과세이연"
+      ],
+      "forbidden_query_terms": [
+        "한도 초과분",
+        "중도인출",
+        "주택 구입",
+        "DB",
+        "DC"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc45",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "4e59c0b90f1f29d402bb44c1bb4683933b307ee75b29ac929340239384a910e9"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-024",
+      "domain": "taxation",
+      "semantic_family_id": "pension_return_income_classification",
+      "template_family_id": "return_income_formal_pension",
+      "source_lineage_family": "official_doc36_pension_return_tax",
+      "scenario_axes": [
+        "audience:customer",
+        "withdrawal_mode:pension",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "연금계좌 운용수익을 연금으로 수령하면 금융소득이 아니라 연금소득으로 과세되나요?",
+      "required_route_labels": [
+        "system",
+        "tax"
+      ],
+      "forbidden_route_labels": [
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "연금계좌",
+        "운용수익",
+        "연금수령",
+        "연금소득"
+      ],
+      "forbidden_query_terms": [
+        "연금외수령",
+        "기타소득",
+        "건강보험료",
+        "해외 ETF"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc36",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "4d7fe26b5ac24efafe228443dbfaf3556a1be871501ac9ce4f05a0d07b7be326"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-025",
+      "domain": "taxation",
+      "semantic_family_id": "pension_return_income_classification",
+      "template_family_id": "return_income_colloquial_pension",
+      "source_lineage_family": "official_doc36_pension_return_tax",
+      "scenario_axes": [
+        "audience:customer",
+        "withdrawal_mode:pension",
+        "surface:colloquial"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "INV",
+      "parent_case_id": "DEV-NEW-024",
+      "relation": "semantic_invariant",
+      "question": "연금 계좌에서 번 투자수익을 연금으로 받으면 이자·배당 같은 금융소득 말고 연금소득으로 보는 건가요?",
+      "required_route_labels": [
+        "system",
+        "tax"
+      ],
+      "forbidden_route_labels": [
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "연금계좌",
+        "운용수익",
+        "연금수령",
+        "연금소득"
+      ],
+      "forbidden_query_terms": [
+        "연금외수령",
+        "기타소득",
+        "건강보험료",
+        "해외 ETF"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc36",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "4d7fe26b5ac24efafe228443dbfaf3556a1be871501ac9ce4f05a0d07b7be326"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-026",
+      "domain": "taxation",
+      "semantic_family_id": "pension_return_income_classification",
+      "template_family_id": "return_income_formal_nonpension",
+      "source_lineage_family": "official_doc36_pension_return_tax",
+      "scenario_axes": [
+        "audience:customer",
+        "withdrawal_mode:non_pension",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "DIR",
+      "parent_case_id": "DEV-NEW-024",
+      "relation": "directional_contrast",
+      "question": "연금계좌 운용수익을 연금 외로 수령하면 금융소득이 아니라 기타소득으로 과세되나요?",
+      "required_route_labels": [
+        "system",
+        "tax"
+      ],
+      "forbidden_route_labels": [
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "연금계좌",
+        "운용수익",
+        "연금외수령",
+        "기타소득"
+      ],
+      "forbidden_query_terms": [
+        "연금소득",
+        "건강보험료",
+        "해외 ETF"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc36",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "4d7fe26b5ac24efafe228443dbfaf3556a1be871501ac9ce4f05a0d07b7be326"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-027",
+      "domain": "protection_remedies",
+      "semantic_family_id": "personal_insolvency_withdrawal_qualifier",
+      "template_family_id": "insolvency_formal_court_rehabilitation",
+      "source_lineage_family": "official_doc47_personal_insolvency_withdrawal",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:DC",
+        "process:court_personal_rehabilitation",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "DC 가입자가 최근 5년 안에 법원의 개인회생절차개시결정을 받았고 그 효력이 진행 중이면, 이를 사유로 퇴직연금 중도인출을 신청할 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "DC",
+        "개인회생절차개시결정",
+        "중도인출"
+      ],
+      "forbidden_query_terms": [
+        "회사 도산",
+        "직접청구",
+        "주택 구입",
+        "요양",
+        "재난"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc47",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "44455ceeee72dc8dbb94f7bedb6a9d60af2f9c383acb20a6c475170c08a6ba51"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-028",
+      "domain": "protection_remedies",
+      "semantic_family_id": "personal_insolvency_withdrawal_qualifier",
+      "template_family_id": "insolvency_colloquial_court_rehabilitation",
+      "source_lineage_family": "official_doc47_personal_insolvency_withdrawal",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:DC",
+        "process:court_personal_rehabilitation",
+        "surface:colloquial"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "INV",
+      "parent_case_id": "DEV-NEW-027",
+      "relation": "semantic_invariant",
+      "question": "DC 가입자인데 법원에서 개인회생 개시 결정을 받은 지 5년이 안 됐고 아직 절차가 진행 중입니다. 이 사유로 중도인출할 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "DC",
+        "개인회생절차개시결정",
+        "중도인출"
+      ],
+      "forbidden_query_terms": [
+        "회사 도산",
+        "직접청구",
+        "주택 구입",
+        "요양",
+        "재난"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc47",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "44455ceeee72dc8dbb94f7bedb6a9d60af2f9c383acb20a6c475170c08a6ba51"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    },
+    {
+      "case_id": "DEV-NEW-029",
+      "domain": "protection_remedies",
+      "semantic_family_id": "personal_insolvency_withdrawal_qualifier",
+      "template_family_id": "insolvency_formal_private_workout",
+      "source_lineage_family": "official_doc47_personal_insolvency_withdrawal",
+      "scenario_axes": [
+        "audience:customer",
+        "plan:DC",
+        "process:private_workout_or_credit_recovery",
+        "surface:formal"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "DIR",
+      "parent_case_id": "DEV-NEW-027",
+      "relation": "directional_contrast",
+      "question": "DC 가입자가 최근 5년 안에 개인워크아웃 또는 신용회복 절차를 시작했고 그 절차가 진행 중이면, 이를 사유로 퇴직연금 중도인출을 신청할 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "tax",
+        "product_explanation",
+        "product_comparison",
+        "conditional_recommendation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "DC",
+        "개인워크아웃",
+        "신용회복",
+        "중도인출"
+      ],
+      "forbidden_query_terms": [
+        "개인회생절차개시결정",
+        "회사 도산",
+        "직접청구",
+        "주택 구입",
+        "요양",
+        "재난"
+      ],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc47",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "44455ceeee72dc8dbb94f7bedb6a9d60af2f9c383acb20a6c475170c08a6ba51"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "organizer_primary_source_curation",
+        "reviewer": "candidate_adversary",
+        "review_status": "development_only_after_same_system_review"
+      }
+    }
+  ]
+}

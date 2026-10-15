@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "suite_id": "mirae-pension-hcx-precision-v1",
+  "source_cases": "tests/fixtures/pension_grounding_cases.json",
+  "maximum_logical_questions_per_run": 1,
+  "cases": [
+    {
+      "case_id": "GROUND-SYSTEM-001",
+      "expected_hcx_called": true
+    },
+    {
+      "case_id": "GROUND-TAX-001",
+      "expected_hcx_called": true
+    },
+    {
+      "case_id": "GROUND-CALC-001",
+      "expected_hcx_called": true
+    },
+    {
+      "case_id": "GROUND-PROCEDURE-001",
+      "expected_hcx_called": true
+    },
+    {
+      "case_id": "GROUND-PRODUCT-001",
+      "expected_hcx_called": true
+    },
+    {
+      "case_id": "GROUND-COMPOUND-001",
+      "expected_hcx_called": true
+    },
+    {
+      "case_id": "GROUND-RECOMMENDATION-COMPLETE-001",
+      "expected_hcx_called": true
+    },
+    {
+      "case_id": "GROUND-RECOMMENDATION-001",
+      "expected_hcx_called": false
+    },
+    {
+      "case_id": "GROUND-OUT-OF-CORPUS-001",
+      "expected_hcx_called": false
+    }
+  ]
+}

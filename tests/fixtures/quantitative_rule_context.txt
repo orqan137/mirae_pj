@@ -1,0 +1,2 @@
+[EVIDENCE] source_id=doc41 citation_id=doc41:page=1:chunk=1
+연금저축 세액공제율 16.5%는 소득 요건에 따라 적용됩니다.

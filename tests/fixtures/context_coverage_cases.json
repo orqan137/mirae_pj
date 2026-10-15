@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "CONTEXT-MIXED-001",
+      "scenario": "calculation_comparison_general",
+      "max_chars": 1200,
+      "expected_complete": true,
+      "required_markers": [
+        "calculated_tax_credit_won=1485000",
+        "KR0000000000 | A | annual_total_fee_rate | 0.31",
+        "KR0000000001 | A | annual_total_fee_rate | 0.42",
+        "citation_id=doc20:sheet=안내:chunk=1",
+        "법정 사유"
+      ],
+      "forbidden_markers": []
+    },
+    {
+      "case_id": "CONTEXT-GENERAL-001",
+      "scenario": "three_general_requirements",
+      "max_chars": 900,
+      "expected_complete": true,
+      "required_markers": [
+        "source_id=doc15",
+        "source_id=doc41",
+        "source_id=doc20"
+      ],
+      "forbidden_markers": [
+        "source_id=doc11",
+        "source_id=doc44",
+        "source_id=doc22"
+      ]
+    },
+    {
+      "case_id": "CONTEXT-STRUCTURED-001",
+      "scenario": "structured_product_and_general",
+      "max_chars": 800,
+      "expected_complete": true,
+      "required_markers": [
+        "[PRODUCT EVIDENCE]",
+        "product_code=KR0000000000",
+        "source_id=doc20",
+        "필요한 서류"
+      ],
+      "forbidden_markers": [
+        "운용전문인력 변경내역"
+      ]
+    },
+    {
+      "case_id": "CONTEXT-BUDGET-FAIL-001",
+      "scenario": "calculation_comparison_general",
+      "max_chars": 300,
+      "expected_complete": false,
+      "required_markers": [
+        "[DETERMINISTIC_CALCULATOR]",
+        "[TYPED PRODUCT COMPARISON]"
+      ],
+      "forbidden_markers": []
+    }
+  ]
+}

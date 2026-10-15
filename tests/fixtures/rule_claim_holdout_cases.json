@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "RULE-HOLDOUT-PARA-001",
+      "stratum": "supported_paraphrase",
+      "question": "IRP 중도인출 절차를 설명해 주세요.",
+      "answer": "IRP에서 중간에 돈을 빼려면 법이 정한 사유를 충족해야 합니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": true
+    },
+    {
+      "case_id": "RULE-HOLDOUT-PARA-002",
+      "stratum": "supported_paraphrase",
+      "question": "IRP 중도인출 조건을 설명해 주세요.",
+      "answer": "IRP의 중도인출은 정해진 법적 사유가 있을 때만 허용됩니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": true
+    },
+    {
+      "case_id": "RULE-HOLDOUT-PARA-003",
+      "stratum": "supported_paraphrase",
+      "question": "연금저축 세액공제 조건을 설명해 주세요.",
+      "answer": "연금저축 세액공제 적용 여부는 납입한 금액과 소득 조건에 따라 달라집니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": true
+    },
+    {
+      "case_id": "RULE-HOLDOUT-PARA-004",
+      "stratum": "supported_paraphrase",
+      "question": "DC형 퇴직연금 운용방법 선택이 가능한가요?",
+      "answer": "DC형 가입자는 제도가 허용한 운용방법 가운데 하나를 직접 고를 수 있습니다 [근거:doc18:page=3:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": true
+    },
+    {
+      "case_id": "RULE-HOLDOUT-PARA-005",
+      "stratum": "supported_paraphrase",
+      "question": "IRP 중도인출 조건과 서류를 설명해 주세요.",
+      "answer": "IRP 중도인출에는 법에서 정한 사유가 요구되고 관련 서류도 확인해야 합니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": true
+    },
+    {
+      "case_id": "RULE-HOLDOUT-PARA-006",
+      "stratum": "supported_paraphrase",
+      "question": "IRP 중도인출과 연금저축 세액공제를 함께 설명해 주세요.",
+      "answer": "IRP 중도인출은 법정 사유가 있을 때만 허용됩니다 [근거:doc20:page=2:chunk=1] 그리고 연금저축 세액공제는 납입액과 소득 요건을 따릅니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": true
+    },
+    {
+      "case_id": "RULE-HOLDOUT-PARA-007",
+      "stratum": "supported_paraphrase",
+      "question": "DC형 가입자가 운용방법을 선택할 수 있나요?",
+      "answer": "DC형 가입자는 허용 범위 안에서 운용방법 선택이 가능합니다 [근거:doc18:page=3:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": true
+    },
+    {
+      "case_id": "RULE-HOLDOUT-PARA-008",
+      "stratum": "supported_paraphrase",
+      "question": "연금저축 세액공제 적용 여부는 무엇으로 결정되나요?",
+      "answer": "연금저축에서 세액공제를 받는지는 납입액 및 소득 요건으로 결정됩니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": true
+    },
+    {
+      "case_id": "RULE-HOLDOUT-NEG-001",
+      "stratum": "unsafe_hard_negative",
+      "question": "IRP 중도인출 조건을 설명해 주세요.",
+      "answer": "IRP 가입자는 누구나 자유롭게 중도인출할 수 있습니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": false
+    },
+    {
+      "case_id": "RULE-HOLDOUT-NEG-002",
+      "stratum": "unsafe_hard_negative",
+      "question": "IRP 중도인출 조건과 서류를 설명해 주세요.",
+      "answer": "IRP 중도인출은 법정 사유에만 가능하지만 확인 서류는 불필요합니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": false
+    },
+    {
+      "case_id": "RULE-HOLDOUT-NEG-003",
+      "stratum": "unsafe_hard_negative",
+      "question": "연금저축 세액공제 조건을 설명해 주세요.",
+      "answer": "연금저축 세액공제는 소득과 무관하게 적용됩니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": false
+    },
+    {
+      "case_id": "RULE-HOLDOUT-NEG-004",
+      "stratum": "unsafe_hard_negative",
+      "question": "DC형 퇴직연금 운용방법 선택이 가능한가요?",
+      "answer": "DC형 가입자는 허용된 운용방법을 직접 고를 수 없습니다 [근거:doc18:page=3:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": false
+    },
+    {
+      "case_id": "RULE-HOLDOUT-NEG-005",
+      "stratum": "unsafe_hard_negative",
+      "question": "연금저축 세액공제 조건을 설명해 주세요.",
+      "answer": "연금저축 세액공제는 납입액과 소득 조건에 따라 적용됩니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": false
+    },
+    {
+      "case_id": "RULE-HOLDOUT-NEG-006",
+      "stratum": "unsafe_hard_negative",
+      "question": "연금저축 세액공제 적용 대상을 설명해 주세요.",
+      "answer": "연금저축 세액공제는 누구에게나 항상 적용됩니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": false
+    },
+    {
+      "case_id": "RULE-HOLDOUT-NEG-007",
+      "stratum": "unsafe_hard_negative",
+      "question": "IRP 중도인출 조건을 설명해 주세요.",
+      "answer": "IRP 중도인출은 법정 사유가 없어도 가능합니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": false
+    },
+    {
+      "case_id": "RULE-HOLDOUT-NEG-008",
+      "stratum": "unsafe_hard_negative",
+      "question": "DC형 퇴직연금 운용방법 선택이 가능한가요?",
+      "answer": "DC형 가입자는 허용된 운용방법을 선택할 수 있습니다.",
+      "evidence_context_file": "rule_claim_context.txt",
+      "expected_valid": false
+    }
+  ]
+}

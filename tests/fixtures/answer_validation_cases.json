@@ -1,0 +1,1150 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "ANSWER-GUARD-NAME-SUPPORTED-001",
+      "category": "product_comparison",
+      "question": "장기성장포커스와 다올전단채의 A 클래스 총보수를 비교해 주세요.",
+      "answer": "장기성장포커스 총보수는 1.47%입니다 [근거:a.pdf:page=3]. 다올전단채 총보수는 0.145%입니다 [근거:b.pdf:page=6].",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [
+        {
+          "product_code": "KR510902511M",
+          "canonical_source_id": "KR510902511M",
+          "aliases": [
+            "KR510902511M"
+          ],
+          "official_name": "미래에셋장기성장포커스증권자투자신탁1호(주식)"
+        },
+        {
+          "product_code": "KR5152420028",
+          "canonical_source_id": "KR5152420028",
+          "aliases": [
+            "KR5152420028"
+          ],
+          "official_name": "다올전단채증권투자신탁[채권]"
+        }
+      ],
+      "expected_elements": [
+        "두 상품별 총보수 값"
+      ],
+      "forbidden_claims": [
+        "상품 간 값 교환"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-NAME-SWAP-001",
+      "category": "product_comparison",
+      "question": "장기성장포커스와 다올전단채의 A 클래스 총보수를 비교해 주세요.",
+      "answer": "장기성장포커스 총보수는 0.145%이고 다올전단채 총보수는 1.47%입니다.",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [
+        {
+          "product_code": "KR510902511M",
+          "canonical_source_id": "KR510902511M",
+          "aliases": [
+            "KR510902511M"
+          ],
+          "official_name": "미래에셋장기성장포커스증권자투자신탁1호(주식)"
+        },
+        {
+          "product_code": "KR5152420028",
+          "canonical_source_id": "KR5152420028",
+          "aliases": [
+            "KR5152420028"
+          ],
+          "official_name": "다올전단채증권투자신탁[채권]"
+        }
+      ],
+      "expected_elements": [
+        "상품명-값 관계 차단"
+      ],
+      "forbidden_claims": [
+        "상품 간 값 교환"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_value_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-NAME-METRIC-001",
+      "category": "product_comparison",
+      "question": "장기성장포커스의 A 클래스 총보수를 설명해 주세요.",
+      "answer": "장기성장포커스 총보수는 1.49%입니다.",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [
+        {
+          "product_code": "KR510902511M",
+          "canonical_source_id": "KR510902511M",
+          "aliases": [
+            "KR510902511M"
+          ],
+          "official_name": "미래에셋장기성장포커스증권자투자신탁1호(주식)"
+        }
+      ],
+      "expected_elements": [
+        "총보수와 총보수·비용 구분"
+      ],
+      "forbidden_claims": [
+        "총보수·비용을 총보수로 표현"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_value_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-CODE-SUPPORTED-001",
+      "category": "product_comparison",
+      "question": "두 코드의 A 클래스 총보수를 비교해 주세요.",
+      "answer": "KR510902511M 총보수는 1.47%입니다 [근거:a.pdf:page=3]. KR5152420028 총보수는 0.145%입니다 [근거:b.pdf:page=6].",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "두 상품코드별 총보수 값"
+      ],
+      "forbidden_claims": [
+        "상품코드 간 값 교환"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-CODE-SWAP-001",
+      "category": "product_comparison",
+      "question": "두 코드의 A 클래스 총보수를 비교해 주세요.",
+      "answer": "KR510902511M 총보수는 0.145%이고 KR5152420028 총보수는 1.47%입니다.",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "상품코드-값 관계 차단"
+      ],
+      "forbidden_claims": [
+        "상품코드 간 값 교환"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_value_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-AMBIGUOUS-NAME-001",
+      "category": "product_comparison",
+      "question": "두 상품코드를 비교해 주세요.",
+      "answer": "한국투자 골드플랜 연금 증권 자투자신탁 1호(채권) 총보수는 1.47%입니다.",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [
+        {
+          "product_code": "KR510902511M",
+          "canonical_source_id": "KR510902511M",
+          "aliases": [
+            "KR510902511M"
+          ],
+          "official_name": "한국투자 골드플랜 연금 증권 자투자신탁 1호(채권)"
+        },
+        {
+          "product_code": "KR5152420028",
+          "canonical_source_id": "KR5152420028",
+          "aliases": [
+            "KR5152420028"
+          ],
+          "official_name": "한국투자 골드플랜 연금 증권 자투자신탁 1호(채권)"
+        }
+      ],
+      "expected_elements": [
+        "동일 상품명 모호성 차단"
+      ],
+      "forbidden_claims": [
+        "상품코드 추정"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [
+        "정확한 상품코드"
+      ],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "ambiguous_product_name_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-UNRESOLVED-NAME-001",
+      "category": "product_comparison",
+      "question": "프리미엄크레딧알파의 A 클래스 총보수를 설명해 주세요.",
+      "answer": "프리미엄크레딧알파 총보수는 1.47%입니다.",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [
+        {
+          "product_code": "KR5110501016",
+          "canonical_source_id": "KR5110501016",
+          "aliases": [
+            "KR5110501016"
+          ],
+          "official_name": "미래에셋프리미엄크레딧알파증권자투자신탁(채권)"
+        }
+      ],
+      "expected_elements": [
+        "typed 표에 없는 상품명 관계 차단"
+      ],
+      "forbidden_claims": [
+        "다른 상품 값을 재사용"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [
+        "해당 상품의 typed 수수료 근거"
+      ],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "unresolved_product_name_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-UNRESOLVED-CODE-001",
+      "category": "product_comparison",
+      "question": "KR5110501016의 A 클래스 총보수를 설명해 주세요.",
+      "answer": "KR5110501016 총보수는 1.47%입니다.",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [
+        {
+          "product_code": "KR5110501016",
+          "canonical_source_id": "KR5110501016",
+          "aliases": [
+            "KR5110501016"
+          ],
+          "official_name": "미래에셋프리미엄크레딧알파증권자투자신탁(채권)"
+        }
+      ],
+      "expected_elements": [
+        "typed 표에 없는 상품코드 관계 차단"
+      ],
+      "forbidden_claims": [
+        "다른 상품 값을 재사용"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [
+        "해당 상품코드의 typed 수수료 근거"
+      ],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "unresolved_product_code_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-PERFORMANCE-SUPPORTED-001",
+      "category": "product_comparison",
+      "question": "KR510902511M의 A 클래스 1년 수익률을 설명해 주세요.",
+      "answer": "KR510902511M의 2024년 12월 31일 기준 1년 연환산 세전 수익률은 4.10%입니다 [근거:a.pdf:page=8].",
+      "evidence_context_file": "typed_performance_balance_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "성과 기간·연환산·세전·기준일 결속"
+      ],
+      "forbidden_claims": [
+        "연환산 수익률을 누적 또는 세후로 변경"
+      ],
+      "required_evidence": [
+        "comparison:performance"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-PERFORMANCE-BASIS-001",
+      "category": "product_comparison",
+      "question": "KR510902511M의 A 클래스 1년 수익률을 설명해 주세요.",
+      "answer": "KR510902511M의 2024년 12월 31일 기준 1년 누적 세후 수익률은 4.10%입니다.",
+      "evidence_context_file": "typed_performance_balance_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "성과 aggregation·tax basis 변조 차단"
+      ],
+      "forbidden_claims": [
+        "누적 세후 수익률"
+      ],
+      "required_evidence": [
+        "comparison:performance"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_qualifier_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-PERFORMANCE-MISSING-001",
+      "category": "product_comparison",
+      "question": "KR510902511M의 A 클래스 1년 수익률을 설명해 주세요.",
+      "answer": "KR510902511M의 2024년 12월 31일 기준 1년 수익률은 4.10%입니다.",
+      "evidence_context_file": "typed_performance_balance_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "연환산·세전 qualifier 누락 차단"
+      ],
+      "forbidden_claims": [
+        "qualifier 없는 수익률 단정"
+      ],
+      "required_evidence": [
+        "comparison:performance"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_qualifier_missing"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-BALANCE-SUPPORTED-001",
+      "category": "product_comparison",
+      "question": "KR510902511M의 A 클래스 기간말 잔고를 설명해 주세요.",
+      "answer": "KR510902511M의 2024년 12월 22일 기준 기간말 잔고 금액은 130백만원입니다 [근거:a.pdf:page=9].",
+      "evidence_context_file": "typed_performance_balance_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "기간말 잔고 금액·단위·기준일 결속"
+      ],
+      "forbidden_claims": [
+        "좌수와 금액 혼동"
+      ],
+      "required_evidence": [
+        "comparison:balance"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-BALANCE-UNIT-001",
+      "category": "product_comparison",
+      "question": "KR510902511M의 A 클래스 기간말 잔고를 설명해 주세요.",
+      "answer": "KR510902511M의 2024년 12월 22일 기준 기간말 잔고 좌수는 130백만원입니다.",
+      "evidence_context_file": "typed_performance_balance_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "같은 값이어도 좌수·금액 단위 혼동 차단"
+      ],
+      "forbidden_claims": [
+        "좌수를 백만원으로 표현"
+      ],
+      "required_evidence": [
+        "comparison:balance"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_qualifier_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-BALANCE-CURRENT-001",
+      "category": "product_comparison",
+      "question": "KR510902511M의 A 클래스 기간말 잔고를 설명해 주세요.",
+      "answer": "KR510902511M의 2024년 12월 22일 기준 현재 기간말 잔고 금액은 130백만원입니다.",
+      "evidence_context_file": "typed_performance_balance_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "역사적 기간말 잔고의 현재 AUM 변환 차단"
+      ],
+      "forbidden_claims": [
+        "현재 또는 실시간 AUM"
+      ],
+      "required_evidence": [
+        "comparison:balance"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "historical_balance_as_current"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-CITATION-MISSING-001",
+      "category": "product_comparison",
+      "question": "KR510902511M의 A 클래스 총보수를 설명해 주세요.",
+      "answer": "KR510902511M 총보수는 1.47%입니다.",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "중요 정량 주장 citation recall"
+      ],
+      "forbidden_claims": [
+        "근거 표기 없는 정량 단정"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "citation_missing"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-CITATION-FABRICATED-001",
+      "category": "tax",
+      "question": "연금저축 세액공제율을 설명해 주세요.",
+      "answer": "연금저축 세액공제율은 16.5%입니다 [근거:doc99:page=1:chunk=1].",
+      "evidence_context_file": "general_citation_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "citation precision"
+      ],
+      "forbidden_claims": [
+        "Context에 없는 citation ID"
+      ],
+      "required_evidence": [
+        "doc41"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "citation_not_in_context"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-CITATION-CROSS-PRODUCT-001",
+      "category": "product_comparison",
+      "question": "KR510902511M의 A 클래스 총보수를 설명해 주세요.",
+      "answer": "KR510902511M 총보수는 1.47%입니다 [근거:b.pdf:page=6].",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "상품-typed source citation 관계"
+      ],
+      "forbidden_claims": [
+        "다른 상품 source 인용"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_citation_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-RULE-SUPPORTED-001",
+      "category": "procedure",
+      "question": "IRP 중도인출 조건을 설명해 주세요.",
+      "answer": "IRP 중도인출은 법정 사유에 해당하는 경우에만 가능합니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "비정량 규칙 문장과 직접 근거 결속"
+      ],
+      "forbidden_claims": [
+        "근거 없는 중도인출 규칙"
+      ],
+      "required_evidence": [
+        "doc20"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-RULE-CITATION-MISSING-001",
+      "category": "procedure",
+      "question": "IRP 중도인출 조건을 설명해 주세요.",
+      "answer": "IRP 중도인출은 법정 사유에 해당하는 경우에만 가능합니다.",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "비정량 규칙 citation recall"
+      ],
+      "forbidden_claims": [
+        "인용 없는 중도인출 규칙"
+      ],
+      "required_evidence": [
+        "doc20"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "rule_citation_missing"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-RULE-WRONG-TOPIC-001",
+      "category": "procedure",
+      "question": "IRP 중도인출 조건을 설명해 주세요.",
+      "answer": "IRP 중도인출은 법정 사유에 해당하는 경우에만 가능합니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "규칙 citation precision"
+      ],
+      "forbidden_claims": [
+        "세액공제 문서를 중도인출 근거로 사용"
+      ],
+      "required_evidence": [
+        "doc20"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "rule_citation_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-RULE-OVERBROAD-001",
+      "category": "procedure",
+      "question": "IRP 중도인출 조건을 설명해 주세요.",
+      "answer": "IRP는 아무 사유 없이 언제든 중도인출할 수 있습니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "조건 범위 모순 차단"
+      ],
+      "forbidden_claims": [
+        "법정 사유 제한 제거"
+      ],
+      "required_evidence": [
+        "doc20"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "rule_qualifier_contradiction"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-RULE-POLARITY-001",
+      "category": "system",
+      "question": "DC형 퇴직연금 가입자의 운용방법 선택이 가능한가요?",
+      "answer": "DC형 퇴직연금 가입자는 운용방법을 선택할 수 없습니다 [근거:doc18:page=3:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "허용·금지 극성 모순 차단"
+      ],
+      "forbidden_claims": [
+        "가능을 불가능으로 반전"
+      ],
+      "required_evidence": [
+        "doc18"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "rule_polarity_contradiction"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-RULE-MULTI-SUPPORTED-001",
+      "category": "combined",
+      "question": "IRP 중도인출과 연금저축 세액공제를 설명해 주세요.",
+      "answer": "IRP 중도인출은 법정 사유에만 가능합니다 [근거:doc20:page=2:chunk=1] 그리고 연금저축 세액공제는 소득 요건에 따라 적용됩니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "복수 규칙을 원자 claim별로 독립 검증"
+      ],
+      "forbidden_claims": [
+        "한 citation을 다른 규칙에 오결속"
+      ],
+      "required_evidence": [
+        "doc20",
+        "doc41"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-RULE-MULTI-SHARED-MARKER-001",
+      "category": "combined",
+      "question": "IRP 중도인출과 연금저축 세액공제를 설명해 주세요.",
+      "answer": "IRP 중도인출은 법정 사유에만 가능하고 연금저축 세액공제는 납입액과 소득 요건에 따라 적용됩니다 [근거:doc20:page=2:chunk=1; doc41:page=1:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "공유 복수 인용에서 각 규칙의 지원 근거 선택"
+      ],
+      "forbidden_claims": [
+        "무관한 보조 인용 때문에 지원된 규칙을 거부"
+      ],
+      "required_evidence": [
+        "doc20",
+        "doc41"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-RULE-MULTI-POLARITY-001",
+      "category": "procedure",
+      "question": "IRP 중도인출 조건과 서류를 설명해 주세요.",
+      "answer": "IRP 중도인출은 법정 사유에만 가능하고 별도 서류는 필요하지 않습니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "접속된 서류 필요성 claim의 독립 극성 검사"
+      ],
+      "forbidden_claims": [
+        "지원되는 첫 claim으로 반대 극성 둘째 claim을 은폐"
+      ],
+      "required_evidence": [
+        "doc20"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "rule_polarity_contradiction"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-RULE-MULTI-WRONG-CITATION-001",
+      "category": "combined",
+      "question": "IRP 중도인출과 연금저축 세액공제를 설명해 주세요.",
+      "answer": "IRP 중도인출은 법정 사유에만 가능합니다 [근거:doc20:page=2:chunk=1] 그리고 연금저축 세액공제는 소득 요건에 따라 적용됩니다 [근거:doc20:page=2:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "각 claim의 citation precision"
+      ],
+      "forbidden_claims": [
+        "첫 claim의 citation을 둘째 claim에 재사용"
+      ],
+      "required_evidence": [
+        "doc20",
+        "doc41"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "rule_citation_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-TAX-SUPPORTED-001",
+      "category": "tax",
+      "question": "연금저축 세액공제는 누구에게 적용되나요?",
+      "answer": "연금저축 세액공제는 납입액과 소득 요건에 따라 적용됩니다 [근거:doc41:page=1:chunk=1]. 개인별 적용 여부는 해당 요건을 확인해야 합니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "세액공제 적용 요건과 근거 결속"
+      ],
+      "forbidden_claims": [
+        "근거 없는 공제율 단정"
+      ],
+      "required_evidence": [
+        "doc41"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-SYSTEM-SUPPORTED-001",
+      "category": "system",
+      "question": "DC형 가입자가 운용방법을 직접 고를 수 있나요?",
+      "answer": "DC형 퇴직연금 가입자는 제도에서 허용하는 운용방법을 선택할 수 있습니다 [근거:doc18:page=3:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "허용 극성 유지"
+      ],
+      "forbidden_claims": [
+        "금지로 뒤집힌 서술"
+      ],
+      "required_evidence": [
+        "doc18"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-COMBINED-SUPPORTED-002",
+      "category": "combined",
+      "question": "DC형 운용방법 선택과 연금저축 세액공제 적용 요건을 함께 알려주세요.",
+      "answer": "DC형 퇴직연금 가입자는 제도에서 허용하는 운용방법을 선택할 수 있습니다 [근거:doc18:page=3:chunk=1]. 연금저축 세액공제는 납입액과 소득 요건에 따라 적용됩니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "절별 근거 분리"
+      ],
+      "forbidden_claims": [
+        "한 근거로 두 규칙 포괄"
+      ],
+      "required_evidence": [
+        "doc18",
+        "doc41"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-PROCEDURE-LIMIT-001",
+      "category": "procedure",
+      "question": "IRP 중도인출 사유와 필요한 서류를 알려주세요.",
+      "answer": "IRP 중도인출은 법에서 정한 사유에 해당하는 경우에만 가능하며 해당 사유와 필요한 서류를 확인해야 합니다 [근거:doc20:page=2:chunk=1]. 제공된 자료는 서류의 개별 목록까지 규정하지 않으므로 그 범위는 확인이 필요합니다.",
+      "evidence_context_file": "rule_claim_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "근거 한계의 명시"
+      ],
+      "forbidden_claims": [
+        "서류 목록 임의 생성"
+      ],
+      "required_evidence": [
+        "doc20"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-PRODUCT-SINGLE-SUPPORTED-001",
+      "category": "product_explanation",
+      "question": "KR510902511M의 A 클래스 총보수를 알려주세요.",
+      "answer": "KR510902511M의 A 클래스 연 총보수율은 2025-01-17 기준 1.47%입니다 [근거:a.pdf:page=3]. 같은 표의 총보수·비용 비율 1.49%는 별개 지표입니다 [근거:a.pdf:page=3].",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [
+        {
+          "product_code": "KR510902511M",
+          "canonical_source_id": "KR510902511M",
+          "aliases": [
+            "KR510902511M"
+          ],
+          "official_name": "미래에셋장기성장포커스증권자투자신탁1호(주식)"
+        }
+      ],
+      "expected_elements": [
+        "클래스·기준일 명시"
+      ],
+      "forbidden_claims": [
+        "총보수와 총보수·비용 혼용"
+      ],
+      "required_evidence": [],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-QUESTION-NUMBER-WRONG-CITATION-001",
+      "category": "tax",
+      "question": "연금저축 세액공제율 99.9%가 맞나요?",
+      "answer": "연금저축 세액공제율은 99.9%입니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "wrong_numeric_premise_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "질문에서 복사한 수치와 인용 근거의 직접 결속"
+      ],
+      "forbidden_claims": [
+        "근거에 없는 질문 수치를 사실로 확정"
+      ],
+      "required_evidence": [
+        "doc41"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "numeric_citation_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-TYPED-QUESTION-NUMBER-WRONG-CITATION-001",
+      "category": "product_explanation",
+      "question": "이 상품 총보수가 99.9% 맞나요?",
+      "answer": "이 상품 총보수는 99.9%입니다 [근거:a.pdf:page=3].",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "구조화 상품 출처와 질문에서 복사한 수치의 직접 결속"
+      ],
+      "forbidden_claims": [
+        "상품 표에 없는 질문 수치를 사실로 확정"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_value_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-TYPED-SHARED-MARKER-001",
+      "category": "product_comparison",
+      "question": "KR510902511M과 KR5152420028의 총보수를 비교해 주세요.",
+      "answer": "KR510902511M 총보수는 1.47%이고 KR5152420028 총보수는 0.145%입니다 [근거:a.pdf:page=3; b.pdf:page=6].",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "상품별 값과 공유 복수 출처의 결속"
+      ],
+      "forbidden_claims": [
+        "공유 인용이라는 이유로 정상 비교를 거부"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-TYPED-SAME-VALUE-WRONG-SOURCE-001",
+      "category": "product_comparison",
+      "question": "KR510902511M과 KR5152420028의 총보수를 비교해 주세요.",
+      "answer": "KR510902511M 총보수는 1.47%이고 KR5152420028 총보수는 1.47%입니다 [근거:b.pdf:page=6].",
+      "evidence_context_file": "typed_same_value_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "동일 수치라도 상품별 출처 결속"
+      ],
+      "forbidden_claims": [
+        "다른 상품의 같은 값과 출처로 인용을 대체"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_citation_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-TYPED-CLASS-SUPPORTED-001",
+      "category": "product_explanation",
+      "question": "KR510902511M의 C-P 클래스 총보수를 알려주세요.",
+      "answer": "KR510902511M C-P 클래스 총보수는 0.90%입니다 [근거:same.pdf:page=3].",
+      "evidence_context_file": "typed_class_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "상품 코드·판매 클래스·지표·값·출처 결속"
+      ],
+      "forbidden_claims": [
+        "다른 판매 클래스 값"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-TYPED-CLASS-SWAP-001",
+      "category": "product_explanation",
+      "question": "KR510902511M의 C-P 클래스 총보수를 알려주세요.",
+      "answer": "KR510902511M C-P 클래스 총보수는 1.47%입니다 [근거:same.pdf:page=3].",
+      "evidence_context_file": "typed_class_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "판매 클래스별 값 검증"
+      ],
+      "forbidden_claims": [
+        "같은 문서의 A 클래스 값을 C-P 값으로 대체"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_qualifier_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-TYPED-QUESTION-AXIS-SUPPORTED-001",
+      "category": "product_explanation",
+      "question": "KR510902511M C-P 클래스의 2024년 12월 31일 기준 1년 수익률은?",
+      "answer": "KR510902511M C-P 클래스의 2024년 12월 31일 기준 1년 연환산 세전 수익률은 4.10%입니다 [근거:perf.pdf:page=8].",
+      "evidence_context_file": "typed_request_scope_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "질문 지표·기간·기준일과 답변 행 결속"
+      ],
+      "forbidden_claims": [
+        "다른 기간 또는 기준일 행"
+      ],
+      "required_evidence": [
+        "comparison:performance"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": true,
+      "expected_failure_kinds": []
+    },
+    {
+      "case_id": "ANSWER-GUARD-TYPED-QUESTION-METRIC-SWAP-001",
+      "category": "product_explanation",
+      "question": "KR510902511M C-P 클래스 총보수는 얼마인가요?",
+      "answer": "KR510902511M C-P 클래스 총보수비용은 1.49%입니다 [근거:fee.pdf:page=3].",
+      "evidence_context_file": "typed_request_scope_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "질문과 답변의 보수 지표 일치"
+      ],
+      "forbidden_claims": [
+        "총보수 대신 총보수비용 행으로 대체"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_question_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-TYPED-QUESTION-PERIOD-SWAP-001",
+      "category": "product_explanation",
+      "question": "KR510902511M C-P 클래스의 2024년 12월 31일 기준 1년 수익률은?",
+      "answer": "KR510902511M C-P 클래스의 2024년 12월 31일 기준 3년 연환산 세전 수익률은 2.30%입니다 [근거:perf.pdf:page=8].",
+      "evidence_context_file": "typed_request_scope_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "질문과 답변의 수익률 기간 일치"
+      ],
+      "forbidden_claims": [
+        "1년 수익률 대신 3년 수익률로 대체"
+      ],
+      "required_evidence": [
+        "comparison:performance"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_question_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-TYPED-QUESTION-DATE-SWAP-001",
+      "category": "product_explanation",
+      "question": "KR510902511M C-P 클래스의 2024년 12월 31일 기준 1년 수익률은?",
+      "answer": "KR510902511M C-P 클래스의 2025년 1월 31일 기준 1년 연환산 세전 수익률은 5.20%입니다 [근거:perf2.pdf:page=8].",
+      "evidence_context_file": "typed_request_scope_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "질문과 답변의 기준일 일치"
+      ],
+      "forbidden_claims": [
+        "요청 기준일을 다른 기준일로 대체"
+      ],
+      "required_evidence": [
+        "comparison:performance"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_question_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-SINGLE-PRODUCT-WRONG-IDENTITY-001",
+      "category": "product_explanation",
+      "question": "KR510902511M의 총보수를 알려주세요.",
+      "answer": "KR5152420028의 총보수는 0.145%입니다 [근거:b.pdf:page=6].",
+      "evidence_context_file": "typed_fee_comparison_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "질문 상품과 답변 상품 식별자 결속"
+      ],
+      "forbidden_claims": [
+        "다른 상품의 정확한 값을 질문 상품의 답으로 대체"
+      ],
+      "required_evidence": [
+        "comparison:fees"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "product_identity_relation"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-QUANTITATIVE-RULE-SCOPE-001",
+      "category": "tax",
+      "question": "연금저축 세액공제율과 소득 요건을 알려주세요.",
+      "answer": "연금저축 세액공제율 16.5%는 소득과 무관하게 누구나 적용됩니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "quantitative_rule_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "정량 값과 규칙 범위의 동시 검증"
+      ],
+      "forbidden_claims": [
+        "수치만 맞는 과도한 적용 범위"
+      ],
+      "required_evidence": [
+        "doc41"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "rule_qualifier_contradiction"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-QUANTITATIVE-RULE-POLARITY-001",
+      "category": "tax",
+      "question": "연금저축 세액공제율 적용 여부를 알려주세요.",
+      "answer": "연금저축 세액공제율 16.5%는 적용되지 않습니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "quantitative_rule_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "정량 값과 규칙 적용 여부의 동시 검증"
+      ],
+      "forbidden_claims": [
+        "근거와 반대되는 적용 여부"
+      ],
+      "required_evidence": [
+        "doc41"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "rule_polarity_contradiction"
+      ]
+    },
+    {
+      "case_id": "ANSWER-GUARD-QUANTITATIVE-RULE-TARGET-001",
+      "category": "tax",
+      "question": "연금저축 세액공제율 적용 대상을 알려주세요.",
+      "answer": "연금저축 세액공제율 16.5%는 적용 대상이 아닙니다 [근거:doc41:page=1:chunk=1].",
+      "evidence_context_file": "quantitative_rule_context.txt",
+      "assessment_status": "answerable",
+      "resolved_products": [],
+      "expected_elements": [
+        "정량 값과 적용 대상 여부의 동시 검증"
+      ],
+      "forbidden_claims": [
+        "근거와 반대되는 대상 여부"
+      ],
+      "required_evidence": [
+        "doc41"
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_valid": false,
+      "expected_failure_kinds": [
+        "rule_polarity_contradiction"
+      ]
+    }
+  ]
+}

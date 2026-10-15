@@ -1,0 +1,8 @@
+[EVIDENCE] source_id=doc20 source_path=일반문서/doc20.pdf locator=page=2 chunk=1 citation_id=doc20:page=2:chunk=1 authority=organizer_evidence jurisdiction=KR audiences=customer reference_date=unknown effective_from=unknown effective_to=unknown knowledge_as_of=2026-08-30
+IRP 중도인출은 법에서 정한 사유에 해당하는 경우에 한해 가능하며, 해당 사유와 필요한 서류를 확인해야 합니다.
+
+[EVIDENCE] source_id=doc41 source_path=일반문서/doc41.pdf locator=page=1 chunk=1 citation_id=doc41:page=1:chunk=1 authority=organizer_evidence jurisdiction=KR audiences=customer reference_date=unknown effective_from=unknown effective_to=unknown knowledge_as_of=2026-08-30
+연금저축 세액공제는 납입액과 소득 요건에 따라 적용되며, 개인별 적용 여부는 관련 요건을 확인해야 합니다.
+
+[EVIDENCE] source_id=doc18 source_path=일반문서/doc18.pdf locator=page=3 chunk=1 citation_id=doc18:page=3:chunk=1 authority=organizer_evidence jurisdiction=KR audiences=customer reference_date=unknown effective_from=unknown effective_to=unknown knowledge_as_of=2026-08-30
+DC형 퇴직연금 가입자는 제도에서 허용하는 운용방법을 선택할 수 있습니다.

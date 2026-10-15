@@ -1,0 +1,26 @@
+{
+  "case_set_id": "pension-abstention-v1",
+  "provenance": "Topics verified absent from data/knowledge/general by full-text scan; in-corpus topics verified present. Labels derive from the corpus, not from retriever output.",
+  "out_of_corpus": [
+    {"question": "기초연금 수급 자격이 궁금합니다", "absent_term": "기초연금"},
+    {"question": "주택연금 가입 조건을 알려주세요", "absent_term": "주택연금"},
+    {"question": "농지연금 신청 방법 알려주세요", "absent_term": "농지연금"},
+    {"question": "즉시연금 세제 혜택이 어떻게 되나요", "absent_term": "즉시연금"},
+    {"question": "이혼할 때 퇴직연금은 재산분할 대상인가요", "absent_term": "재산분할"},
+    {"question": "국민연금 조기수령 감액률을 알려주세요", "absent_term": "조기수령"},
+    {"question": "비트코인 채굴 수익률 계산 방법", "absent_term": "비트코인"},
+    {"question": "자동차보험료 비교해줘", "absent_term": "자동차보험료"}
+  ],
+  "in_corpus": [
+    "퇴직연금 중도인출 사유를 알려주세요",
+    "IRP 세액공제 한도가 얼마인가요",
+    "연금 수령 시 세율은 어떻게 되나요",
+    "퇴직급여 직접청구 절차",
+    "실물이전이 불가능한 사유",
+    "디폴트옵션 지정 방법",
+    "연금수령한도 계산 방법",
+    "ISA 만기자금 연금계좌 전환",
+    "퇴직연금 규약 변경 절차",
+    "가입자 교육은 누가 하나요"
+  ]
+}

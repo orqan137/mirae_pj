@@ -1,0 +1,149 @@
+{
+  "schema_version": 2,
+  "cases": [
+    {
+      "case_id": "PLAN-NOUN-CONJUNCTION-001",
+      "question": "연금저축과 IRP의 세액공제 차이를 설명해 주세요.",
+      "expected_subquestions": [
+        {
+          "required_route_labels": ["tax"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["세액공제"],
+          "required_query_terms": ["연금저축", "IRP", "세액공제"]
+        }
+      ]
+    },
+    {
+      "case_id": "PLAN-COMPOUND-001",
+      "question": "DB형과 DC형의 차이를 설명해 주세요. 그리고 IRP 세액공제 한도도 알려주세요. 또한 IRP 중도인출 절차도 알려주세요.",
+      "expected_subquestions": [
+        {
+          "required_route_labels": ["system"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": [],
+          "required_query_terms": ["DB형", "DC형"]
+        },
+        {
+          "required_route_labels": ["tax"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["세액공제"],
+          "required_query_terms": ["IRP", "세액공제"]
+        },
+        {
+          "required_route_labels": ["procedure"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["중도인출"],
+          "required_query_terms": ["IRP", "중도인출"]
+        }
+      ]
+    },
+    {
+      "case_id": "PLAN-PRODUCT-AND-PROCEDURE-001",
+      "question": "KR510902511M과 KR5152420028의 A 클래스 총보수를 비교해 주세요. 그리고 IRP 중도인출 절차도 알려주세요.",
+      "expected_subquestions": [
+        {
+          "required_route_labels": ["product_comparison"],
+          "required_requirement_kinds": ["product_identity", "product_comparison_axis"],
+          "required_topic_terms": [],
+          "required_query_terms": ["KR510902511M", "KR5152420028", "총보수"]
+        },
+        {
+          "required_route_labels": ["procedure"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["중도인출"],
+          "required_query_terms": ["IRP", "중도인출"]
+        }
+      ]
+    },
+    {
+      "case_id": "PLAN-UNKNOWN-CLAUSE-001",
+      "question": "연금 생활을 어떻게 준비해야 하나요? 그리고 가족에게 설명할 요점도 알려주세요.",
+      "expected_subquestions": [
+        {
+          "required_route_labels": [],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": [],
+          "required_query_terms": ["연금 생활"]
+        },
+        {
+          "required_route_labels": [],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": [],
+          "required_query_terms": ["가족", "요점"]
+        }
+      ]
+    },
+    {
+      "case_id": "PLAN-IMPLICIT-ENUMERATION-001",
+      "question": "DB형과 DC형 차이, IRP 세액공제 한도, 중도인출 사유를 알려주세요.",
+      "expected_subquestions": [
+        {
+          "required_route_labels": ["system"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": [],
+          "required_query_terms": ["DB형", "DC형", "차이"]
+        },
+        {
+          "required_route_labels": ["tax"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["세액공제"],
+          "required_query_terms": ["IRP", "세액공제", "한도"]
+        },
+        {
+          "required_route_labels": ["procedure"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["중도인출"],
+          "required_query_terms": ["중도인출", "사유"]
+        }
+      ]
+    },
+    {
+      "case_id": "PLAN-TAX-ELLIPSIS-001",
+      "question": "연금저축과 IRP의 세액공제 차이는? 한도도 알려주세요.",
+      "expected_subquestions": [
+        {
+          "required_route_labels": ["tax"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["세액공제"],
+          "required_query_terms": ["세액공제", "차이"]
+        },
+        {
+          "required_route_labels": ["tax"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["세액공제"],
+          "required_query_terms": ["세액공제", "한도"]
+        }
+      ]
+    },
+    {
+      "case_id": "PLAN-PROCEDURE-COREFERENCE-001",
+      "question": "IRP 중도인출 사유를 알려주세요. 그 경우 필요한 서류도 설명해주세요.",
+      "expected_subquestions": [
+        {
+          "required_route_labels": ["procedure"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["중도인출"],
+          "required_query_terms": ["IRP", "중도인출", "사유"]
+        },
+        {
+          "required_route_labels": ["procedure"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["중도인출"],
+          "required_query_terms": ["중도인출", "그 경우", "서류"]
+        }
+      ]
+    },
+    {
+      "case_id": "PLAN-NOUN-COMMA-NONSPLIT-001",
+      "question": "연금저축, IRP의 세액공제 차이를 설명해 주세요.",
+      "expected_subquestions": [
+        {
+          "required_route_labels": ["tax"],
+          "required_requirement_kinds": ["general_rule"],
+          "required_topic_terms": ["세액공제"],
+          "required_query_terms": ["연금저축", "IRP", "세액공제"]
+        }
+      ]
+    }
+  ]
+}

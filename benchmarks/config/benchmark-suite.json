@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "suite_id": "mirae-pension-agent-v1",
+  "default_profile": "local",
+  "profiles": {
+    "quick": [
+      "environment_contract",
+      "domain_coverage",
+      "lifecycle_paraphrase_holdout",
+      "scenario_robustness",
+      "scenario_robustness_expansion",
+      "scenario_safety",
+      "planning",
+      "tool_selection",
+      "suitability",
+      "local_grounding",
+      "retrieval",
+      "retrieval_robustness",
+      "abstention",
+      "product_parser",
+      "answer_guard",
+      "rule_claim_holdout",
+      "context_coverage",
+      "hcx_precision_plan"
+    ],
+    "local": [
+      "source_compile",
+      "dependency_integrity",
+      "environment_contract",
+      "contract_tests",
+      "domain_coverage",
+      "lifecycle_paraphrase_holdout",
+      "scenario_robustness",
+      "scenario_robustness_expansion",
+      "scenario_safety",
+      "planning",
+      "tool_selection",
+      "suitability",
+      "local_grounding",
+      "retrieval",
+      "retrieval_robustness",
+      "abstention",
+      "product_parser",
+      "answer_guard",
+      "rule_claim_holdout",
+      "context_coverage",
+      "hcx_precision_plan"
+    ],
+    "release": [
+      "source_compile",
+      "dependency_integrity",
+      "environment_contract",
+      "contract_tests",
+      "domain_coverage",
+      "lifecycle_paraphrase_holdout",
+      "scenario_robustness",
+      "scenario_robustness_expansion",
+      "scenario_safety",
+      "planning",
+      "tool_selection",
+      "suitability",
+      "local_grounding",
+      "retrieval",
+      "retrieval_robustness",
+      "abstention",
+      "product_parser",
+      "answer_guard",
+      "rule_claim_holdout",
+      "context_coverage",
+      "hcx_precision_plan",
+      "container_build",
+      "container_contract",
+      "preflight"
+    ],
+    "submission": [
+      "source_compile",
+      "dependency_integrity",
+      "environment_contract",
+      "contract_tests",
+      "domain_coverage",
+      "lifecycle_paraphrase_holdout",
+      "scenario_robustness",
+      "scenario_robustness_expansion",
+      "scenario_safety",
+      "planning",
+      "tool_selection",
+      "suitability",
+      "local_grounding",
+      "retrieval",
+      "retrieval_robustness",
+      "abstention",
+      "product_parser",
+      "answer_guard",
+      "rule_claim_holdout",
+      "context_coverage",
+      "hcx_precision_plan",
+      "container_build",
+      "container_contract",
+      "preflight",
+      "endpoint_smoke"
+    ]
+  },
+  "planning": {
+    "minimum_pass_rate": 1.0,
+    "maximum_hcx_calls": 0
+  },
+  "tool_selection": {
+    "thresholds": {
+      "route_exact_match_rate": 1.0,
+      "source_group_exact_match_rate": 1.0,
+      "tool_selection_exact_match_rate": 1.0,
+      "control_decision_accuracy": 1.0
+    },
+    "maximum_hcx_calls": 0
+  },
+  "domain_coverage": {
+    "thresholds": {
+      "document_inventory_coverage_rate": 1.0,
+      "domain_document_coverage_rate": 1.0,
+      "domain_evaluation_coverage_rate": 1.0
+    },
+    "maximum_hcx_calls": 0
+  },
+  "lifecycle_paraphrase_holdout": {
+    "k": 6,
+    "thresholds": {
+      "positive_retrieval_success_rate": 1.0,
+      "positive_route_coverage_rate": 1.0,
+      "source_group_exact_match_rate": 1.0,
+      "required_query_term_coverage_rate": 1.0,
+      "negative_anchor_rejection_rate": 1.0,
+      "domain_retrieval_coverage_rate": 1.0,
+      "positive_evidence_status_accuracy": 1.0,
+      "positive_generation_eligibility_rate": 1.0,
+      "positive_evidence_qrel_alignment_rate": 1.0,
+      "domain_evidence_coverage_rate": 1.0
+    },
+    "maximum_hcx_calls": 0
+  },
+  "scenario_robustness": {
+    "k": 6,
+    "thresholds": {
+      "minimum_case_pass_rate": 1.0,
+      "minimum_family_all_critical_pass_rate": 1.0,
+      "minimum_worst_axis_pass_rate": 1.0,
+      "maximum_unsafe_generation_count": 0
+    },
+    "maximum_hcx_calls": 0
+  },
+  "suitability": {
+    "minimum_pass_rate": 1.0,
+    "maximum_hcx_calls": 0
+  },
+  "retrieval": {
+    "k": 6,
+    "thresholds": {
+      "recall_at_k": 1.0,
+      "mrr_at_k": 1.0,
+      "ndcg_at_k": 1.0,
+      "map_at_k": 1.0,
+      "no_evidence_rejection_rate": 1.0
+    }
+  },
+  "local_grounding": {
+    "minimum_pass_rate": 1.0,
+    "maximum_hcx_calls": 0
+  },
+  "product_parser": {
+    "minimum_parsed_results": {
+      "fees": 309,
+      "performance": 43,
+      "balance": 342
+    },
+    "maximum_independent_conflicts": 0,
+    "maximum_hcx_calls": 0
+  },
+  "answer_guard": {
+    "minimum_pass_rate": 1.0,
+    "maximum_hcx_calls": 0
+  },
+  "rule_claim_holdout": {
+    "minimum_positive_acceptance_rate": 1.0,
+    "minimum_unsafe_rejection_rate": 1.0,
+    "maximum_hcx_calls": 0
+  },
+  "context_coverage": {
+    "minimum_required_marker_recall": 1.0,
+    "minimum_forbidden_marker_rejection_rate": 1.0,
+    "minimum_budget_adherence_rate": 1.0,
+    "minimum_completeness_decision_accuracy": 1.0,
+    "maximum_hcx_calls": 0
+  },
+  "hcx_precision_plan": {
+    "registered_cases": 9,
+    "maximum_hcx_calls": 0,
+    "maximum_logical_questions_per_live_run": 1
+  },
+  "live_hcx": {
+    "enabled_by_default": false,
+    "maximum_logical_questions": 1
+  },
+  "retrieval_robustness": {
+    "k": 6,
+    "thresholds": {
+      "baseline_recall_at_k": 1.0,
+      "overall_retention_rate": 0.95,
+      "worst_retention_rate": 0.9
+    },
+    "maximum_hcx_calls": 0
+  },
+  "abstention": {
+    "k": 6,
+    "thresholds": {
+      "abstention_rate": 1.0,
+      "in_corpus_retrieval_rate": 1.0
+    },
+    "maximum_hcx_calls": 0
+  }
+}

@@ -1,0 +1,269 @@
+schema_version: 1
+policy: orchestrator_controlled
+model_direct_tool_calls: false
+generated_by_model: false
+
+budgets:
+  request_total_seconds: 270
+  hcx_upstream_seconds: 250
+  max_hcx_calls: 1
+  note: 현재 구현은 단일 HCX 호출만 허용하며 나머지 단계는 전체 제한 안에서 실행한다.
+
+tools:
+  - id: classify_question
+    implementation: app.routing.classify_question
+    version: pension-question-router-v12
+    status: implemented
+    executor: deterministic
+    side_effects: none
+    input:
+      question: string
+    output:
+      labels: string_array
+      source_groups: string_array
+      needs_conditions: boolean
+      requires_calculation: boolean
+    call_when: every_uncached_request
+    failure: service_failure
+
+  - id: plan_question
+    implementation: app.planning.plan_question
+    version: pension-evidence-plan-v20
+    query_anchor_version: pension-query-anchor-v8
+    status: implemented
+    executor: deterministic
+    side_effects: none
+    input:
+      question: string
+      route_labels: string_array
+    output:
+      subquestions: object_array_with_original_text_retrieval_query_and_inherited_terms
+      required_evidence: object_array
+      ambiguous_product_reference: explicit_identity_requirement
+      unsupported_scope_reasons: string_array
+      selected_tools: string_array
+    call_when: every_uncached_request_after_classification_and_again_after_identity_or_suitability_resolution
+    failure: out_of_scope_before_data_access_or_use_single_question_plan_or_limitation
+
+  - id: retrieve_general_evidence
+    implementation: app.retrieval.retrieve_for_queries
+    version: pension-local-retriever-v5
+    status: implemented
+    executor: deterministic
+    side_effects: read_only
+    resources:
+      - data/knowledge
+    input:
+      planned_queries: object_array
+      top_k: integer
+    output:
+      documents: retrieved_document_array
+    call_when: every_planned_subquestion_requiring_general_or_product_narrative
+    failure: service_failure_on_integrity_error_otherwise_out_of_corpus
+
+  - id: resolve_product_identity
+    implementation: app.product_identity.ProductIdentityResolver.resolve
+    version: pension-product-identity-v2
+    status: implemented
+    executor: deterministic
+    side_effects: read_only
+    resources:
+      - data/structured
+    input:
+      question: string
+      product_mentions: string_array
+    output:
+      resolved_products: object_array
+      unresolved_mentions: string_array
+      ambiguous_candidates: object_array
+    call_when: product_question
+    failure: needs_conditions
+
+  - id: retrieve_product_evidence
+    implementation: app.product_facts.ProductEvidenceIndex.render_context
+    status: implemented
+    executor: deterministic
+    side_effects: read_only
+    resources:
+      - data/structured/product_evidence.json
+    input:
+      product_codes: string_array
+      axes: string_array
+      max_chars: integer
+    output:
+      evidence_text: string
+    call_when: exact_product_code_present
+    failure: product_identity_unresolved_or_out_of_corpus
+
+  - id: compare_product_facts
+    implementation: app.product_comparison.compare_product_facts
+    status: implemented
+    executor: deterministic
+    side_effects: none
+    input:
+      resolved_products: object_array
+      requested_axes: string_array
+    output:
+      axes: object_array
+      requested_classes: string_array
+      typed_values: object_array
+    call_when: product_comparison
+    failure: partial_answer_with_incomparable_reasons
+
+  - id: parse_product_axis_values
+    implementation: app.product_values.parse_product_axis_values
+    status: implemented
+    executor: deterministic
+    side_effects: none
+    input:
+      product_code: string
+      axis: string
+      class_label: string
+    output:
+      status: string
+      values: object_array
+      conflicts: object_array
+      reason: string
+    call_when: aligned_fee_performance_or_balance_comparison
+    failure: unsupported_or_ambiguous_or_independent_source_conflict_without_guessing
+
+  - id: calculate_pension_tax_credit
+    implementation: app.calculations.calculate_pension_tax_credit
+    version: pension-tax-credit-doc41-v9
+    status: implemented
+    executor: deterministic
+    side_effects: none
+    input:
+      question: string
+    output:
+      status: calculated_or_needs_input
+      calculation_fields: object
+      missing_inputs: string_array
+    call_when: supported_tax_credit_calculation_candidate
+    failure: needs_conditions
+
+  - id: assess_suitability
+    implementation: app.suitability.assess_suitability
+    status: implemented
+    executor: deterministic
+    side_effects: none
+    resources:
+      - data/structured/product_evidence.json
+    input:
+      question: string
+      resolved_product_codes: string_array
+    output:
+      status: needs_conditions_or_candidate_shortlist_or_out_of_corpus
+      profile: object
+      required_conditions: string_array
+      candidates: object_array
+      policy_limits: string_array
+    call_when: conditional_recommendation
+    failure: needs_conditions_or_out_of_corpus_without_generation
+
+  - id: assess_evidence
+    implementation: app.evidence.assess_evidence
+    version: pension-evidence-assessor-v12
+    status: implemented
+    executor: deterministic
+    side_effects: none
+    input:
+      plan: object
+      evidence: object_array
+      calculation: object_or_null
+    output:
+      decision_status: answerable_or_partially_answerable_or_needs_conditions_or_out_of_corpus_or_out_of_scope_or_conflicting_evidence_or_context_budget_exceeded
+      coverage: object_array
+      missing_conditions: string_array
+      conflicts: object_array
+      planned_tools: string_array
+    call_when: after_preliminary_plan_for_unsupported_scope_or_after_evidence_acquisition
+    failure: limitation_response
+
+  - id: generate_answer
+    implementation: app.backends.hcx.HyperClovaXBackend
+    status: implemented
+    executor: hyperclova_x
+    side_effects: network_hcx_only
+    input:
+      system_policy: string
+      question: string
+      decision: object
+      approved_context: string
+    output:
+      answer: string
+      telemetry: sanitized_token_usage_and_rate_limit_counters
+    call_when: answerable_or_partially_answerable_with_safe_context
+    failure: backend_http_error
+
+  - id: validate_answer
+    implementation: app.answer_validation.validate_answer
+    version: pension-answer-validator-v38
+    semantic_coverage_version: pension-semantic-coverage-v3
+    status: implemented
+    executor: deterministic
+    side_effects: none
+    input:
+      answer: string
+      evidence: object_array
+      decision: object
+      resolved_products: object_array
+    output:
+      valid: boolean
+      unsupported_claims: object_array
+      sensitive_spans: object_array
+      product_value_relations_checked: integer
+      citations_checked: integer
+      question_coverage_required: integer
+      question_coverage_covered: integer
+      question_coverage_failures: string_array
+      rule_claims_checked: integer
+      citation_failures: integer
+      product_failures: product_value_or_identity_or_citation_or_question_relation
+      citation_relation_failures: citation_missing_or_not_in_context_or_numeric_relation
+      qualifier_failures: product_qualifier_relation_or_missing_or_historical_balance_as_current
+      rule_failures: rule_citation_missing_or_relation_or_polarity_or_qualifier_contradiction
+    call_when: after_generation
+    failure: safe_limitation_response
+
+  - id: render_public_evidence
+    implementation: app.evidence_rendering.render_public_evidence_result
+    status: implemented
+    executor: deterministic
+    side_effects: none
+    input:
+      used_evidence: object_array
+    output:
+      retrieved_context: requirement_minimum_evidence_string
+      preserved_subquestion_coverage: boolean
+      complete: boolean
+      missing_sections: string_array
+      rendered_chars: integer
+      max_chars: integer
+    call_when: after_evidence_assessment_before_generation
+    failure: context_budget_exceeded_without_generation
+
+platform_services:
+  - id: response_cache
+    implementation: app.cache.ResponseCache
+    status: implemented
+    model_visible: false
+  - id: request_timeout
+    implementation: app.service.AnswerService
+    status: implemented
+    model_visible: false
+  - id: response_normalization
+    implementation: app.normalization.normalize_response
+    status: implemented
+    model_visible: false
+
+forbidden_tools:
+  - web_search
+  - browser
+  - shell
+  - filesystem_write
+  - email
+  - messenger
+  - customer_account_lookup
+  - financial_transaction
+  - non_hyperclova_llm

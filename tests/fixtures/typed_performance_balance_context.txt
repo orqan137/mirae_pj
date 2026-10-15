@@ -1,0 +1,5 @@
+[TYPED PRODUCT COMPARISON]
+product_code | class | metric | value | unit | as_of_date | period_years | aggregation | tax_basis | source
+KR510902511M | A | annualized_return_1y | 4.10 | percent | 2024-12-31 | 1 | annualized | pre_tax | a.pdf:page=8
+KR510902511M | A | period_end_balance_units | 130 | million_units | 2024-12-22 |  | period_end | not_applicable | a.pdf:page=9
+KR510902511M | A | period_end_balance_amount | 130 | million_won | 2024-12-22 |  | period_end | not_applicable | a.pdf:page=9

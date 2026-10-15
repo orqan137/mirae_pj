@@ -1,0 +1,1688 @@
+{
+  "schema_version": 1,
+  "pack_id": "mirae-pension-development-scenarios-v1",
+  "split": "development",
+  "panel": "development",
+  "pack_fingerprint": "cbb69b9c045f5255a17ed6b210374a011770ac3f94f7af59da5720aeef0d5f9a",
+  "corpus_manifest_sha256": "3e7ad6b0a8f9a9de783396163ab31b782bfefe50a197c30c535e7992e963de17",
+  "cases": [
+    {
+      "case_id": "LIFE-CONTRIBUTION-ISA-001",
+      "domain": "contribution_onboarding",
+      "semantic_family_id": "isa_maturity_pension_transfer_deadline",
+      "template_family_id": "legacy_template_01",
+      "source_lineage_family": "isa_transfer_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "implicit_official_term"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "ISA 끝난 돈을 연금계좌에 넣으려면 언제까지 해야 하나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "ISA",
+        "60일"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc4",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        },
+        {
+          "granularity": "source",
+          "source_id": "doc23",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        },
+        {
+          "granularity": "source",
+          "source_id": "doc33",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-CONTRIBUTION-DELAY-001",
+      "domain": "contribution_onboarding",
+      "semantic_family_id": "dc_contribution_delay_interest",
+      "template_family_id": "legacy_template_02",
+      "source_lineage_family": "dc_contribution_delay_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "implicit_official_term"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "employer_and_customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "회사에서 DC 계좌에 돈을 늦게 넣으면 어떻게 되나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "부담금",
+        "지연이자"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc17",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-GOVERNANCE-SWITCH-001",
+      "domain": "plan_design_governance",
+      "semantic_family_id": "db_dc_plan_conversion",
+      "template_family_id": "legacy_template_03",
+      "source_lineage_family": "plan_conversion_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "employer_and_customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "회사에서 퇴직연금을 DB에서 DC로 바꿀 수 있나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "DB",
+        "DC"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc13",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-GOVERNANCE-EDUCATION-001",
+      "domain": "plan_design_governance",
+      "semantic_family_id": "retirement_plan_member_education",
+      "template_family_id": "legacy_template_04",
+      "source_lineage_family": "member_education_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "audience"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "employer_and_customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "회사가 해줘야 하는 퇴직연금 교육은 몇 번인가요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "퇴직연금",
+        "교육"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc18",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-INVESTING-DEFAULT-001",
+      "domain": "investing_operations",
+      "semantic_family_id": "default_option_automatic_investment",
+      "template_family_id": "legacy_template_05",
+      "source_lineage_family": "default_option_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "implicit_official_term"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "아무것도 고르지 않으면 퇴직연금 돈이 자동으로 굴러가나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "퇴직연금"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc32",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-INVESTING-ETF-LIMIT-001",
+      "domain": "investing_operations",
+      "semantic_family_id": "irp_etf_investment_limit",
+      "template_family_id": "legacy_template_06",
+      "source_lineage_family": "irp_etf_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "IRP에서 ETF를 적립금의 몇 퍼센트까지 담을 수 있나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "IRP",
+        "ETF"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc53",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-TRANSFER-SELL-001",
+      "domain": "transfer_portability",
+      "semantic_family_id": "in_kind_pension_transfer",
+      "template_family_id": "legacy_template_07",
+      "source_lineage_family": "in_kind_transfer_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "implicit_official_term"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "다른 증권사로 연금계좌를 옮길 때 펀드를 꼭 팔아야 하나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "실물이전"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc35",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-TRANSFER-FAILURE-001",
+      "domain": "transfer_portability",
+      "semantic_family_id": "in_kind_transfer_exclusions",
+      "template_family_id": "legacy_template_08",
+      "source_lineage_family": "in_kind_transfer_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "implicit_official_term"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "연금 자산을 그대로 옮기지 못하는 이유가 뭔가요?",
+      "required_route_labels": [
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "실물이전",
+        "불가 사유"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc34",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        },
+        {
+          "granularity": "source",
+          "source_id": "doc35",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-WITHDRAWAL-HOUSE-001",
+      "domain": "withdrawal_liquidity",
+      "semantic_family_id": "pension_house_purchase_withdrawal",
+      "template_family_id": "legacy_template_09",
+      "source_lineage_family": "house_withdrawal_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "implicit_official_term"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "집을 살 때 퇴직연금에서 돈을 꺼낼 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "중도인출",
+        "주택 구입"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc49",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-WITHDRAWAL-MEDICAL-001",
+      "domain": "withdrawal_liquidity",
+      "semantic_family_id": "pension_medical_withdrawal",
+      "template_family_id": "legacy_template_10",
+      "source_lineage_family": "medical_withdrawal_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "implicit_official_term"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "병원비 때문에 IRP 돈을 미리 쓸 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "중도인출",
+        "요양"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc46",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-PAYOUT-START-001",
+      "domain": "retirement_payout",
+      "semantic_family_id": "irp_pension_payout_start",
+      "template_family_id": "legacy_template_11",
+      "source_lineage_family": "payout_start_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "IRP를 연금으로 받기 시작하려면 어떤 조건이 필요한가요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "IRP"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc21",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-PAYOUT-LIMIT-001",
+      "domain": "retirement_payout",
+      "semantic_family_id": "pension_withdrawal_limit_tax",
+      "template_family_id": "legacy_template_12",
+      "source_lineage_family": "payout_limit_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "implicit_official_term"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "연금계좌에서 한 번에 너무 많이 빼면 세금상 어떻게 되나요?",
+      "required_route_labels": [
+        "system",
+        "tax",
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "연금수령한도"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc39",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-TAX-OVERSEAS-ETF-001",
+      "domain": "taxation",
+      "semantic_family_id": "pension_overseas_etf_tax",
+      "template_family_id": "legacy_template_13",
+      "source_lineage_family": "overseas_etf_tax_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "연금계좌로 해외 ETF를 사면 세금은 어떻게 되나요?",
+      "required_route_labels": [
+        "system",
+        "tax"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "해외 ETF"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc42",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-TAX-HEALTH-INSURANCE-001",
+      "domain": "taxation",
+      "semantic_family_id": "pension_distribution_health_insurance",
+      "template_family_id": "legacy_template_14",
+      "source_lineage_family": "health_insurance_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "implicit_official_term"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "연금계좌 월배당 ETF의 배당이 건강보험료에 잡히나요?",
+      "required_route_labels": [
+        "system",
+        "tax"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "건강보험료"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc43",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-PROTECTION-SEIZURE-001",
+      "domain": "protection_remedies",
+      "semantic_family_id": "retirement_pension_seizure_protection",
+      "template_family_id": "legacy_template_15",
+      "source_lineage_family": "seizure_protection_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "퇴직연금도 빚 때문에 압류될 수 있나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "압류"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc16",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "LIFE-PROTECTION-DIRECT-CLAIM-001",
+      "domain": "protection_remedies",
+      "semantic_family_id": "unpaid_retirement_direct_claim",
+      "template_family_id": "legacy_template_16",
+      "source_lineage_family": "direct_claim_guidance",
+      "scenario_axes": [
+        "colloquial_paraphrase",
+        "implicit_official_term"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "회사가 망해서 퇴직금을 못 받으면 증권사에 바로 청구할 수 있나요?",
+      "required_route_labels": [
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "직접청구",
+        "지급누락"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "source",
+          "source_id": "doc57",
+          "locator": null,
+          "chunk_index": null,
+          "content_sha256": null
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "ANCHOR-NEG-DELAYED-ENROLLMENT-001",
+      "domain": "contribution_onboarding",
+      "semantic_family_id": "dc_contribution_delay_interest",
+      "template_family_id": "legacy_template_17",
+      "source_lineage_family": "dc_contribution_delay_guidance",
+      "scenario_axes": [
+        "near_negative",
+        "lexical_overlap"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "DC 계좌에 늦게 가입했는데 가입 대상이 맞나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "지연이자"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "ANCHOR-NEG-NO-TRANSFER-001",
+      "domain": "transfer_portability",
+      "semantic_family_id": "in_kind_pension_transfer",
+      "template_family_id": "legacy_template_18",
+      "source_lineage_family": "in_kind_transfer_guidance",
+      "scenario_axes": [
+        "negation",
+        "multi_intent",
+        "anchor_control"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "IRP를 다른 금융사로 옮길 생각은 없고 세액공제만 알려주세요.",
+      "required_route_labels": [
+        "system",
+        "tax"
+      ],
+      "forbidden_route_labels": [
+        "procedure"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "실물이전"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "ANCHOR-NEG-PAYOUT-GOAL-001",
+      "domain": "retirement_payout",
+      "semantic_family_id": "pension_withdrawal_limit_tax",
+      "template_family_id": "legacy_template_19",
+      "source_lineage_family": "payout_limit_guidance",
+      "scenario_axes": [
+        "near_negative",
+        "goal_shift",
+        "anchor_control"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "은퇴 후 연금을 많이 받는 것이 목표라 어떤 상품이 맞는지 추천해 주세요.",
+      "required_route_labels": [
+        "conditional_recommendation"
+      ],
+      "forbidden_route_labels": [
+        "procedure"
+      ],
+      "expected_source_groups": [
+        "general",
+        "product"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "연금수령한도"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "ANCHOR-NEG-NO-BANKRUPTCY-001",
+      "domain": "protection_remedies",
+      "semantic_family_id": "unpaid_retirement_direct_claim",
+      "template_family_id": "legacy_template_20",
+      "source_lineage_family": "direct_claim_guidance",
+      "scenario_axes": [
+        "negation",
+        "scope_shift",
+        "anchor_control"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "회사가 망하지 않도록 퇴직급여 제도를 설명해 주세요.",
+      "required_route_labels": [],
+      "forbidden_route_labels": [
+        "procedure"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "직접청구"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "ANCHOR-NEG-AUTO-PRODUCT-001",
+      "domain": "investing_operations",
+      "semantic_family_id": "default_option_automatic_investment",
+      "template_family_id": "legacy_template_21",
+      "source_lineage_family": "default_option_guidance",
+      "scenario_axes": [
+        "near_negative",
+        "product_distractor",
+        "anchor_control"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "퇴직연금 돈을 자동으로 굴리는 펀드의 수익률을 설명해 주세요.",
+      "required_route_labels": [
+        "system",
+        "product_explanation"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general",
+        "product"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "디폴트옵션"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "ANCHOR-NEG-NO-HOUSE-WITHDRAWAL-001",
+      "domain": "withdrawal_liquidity",
+      "semantic_family_id": "pension_house_purchase_withdrawal",
+      "template_family_id": "legacy_template_22",
+      "source_lineage_family": "house_withdrawal_guidance",
+      "scenario_axes": [
+        "negation",
+        "anchor_control"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "집을 살 계획이지만 퇴직연금은 빼지 않고 유지할 겁니다.",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [
+        "procedure"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "중도인출"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "ANCHOR-NEG-NO-MEDICAL-WITHDRAWAL-001",
+      "domain": "withdrawal_liquidity",
+      "semantic_family_id": "pension_medical_withdrawal",
+      "template_family_id": "legacy_template_23",
+      "source_lineage_family": "medical_withdrawal_guidance",
+      "scenario_axes": [
+        "negation",
+        "anchor_control"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "병원비는 현금으로 내고 IRP는 미리 쓰지 않겠습니다.",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [
+        "procedure"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "중도인출"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "ANCHOR-NEG-NO-ISA-TRANSFER-001",
+      "domain": "contribution_onboarding",
+      "semantic_family_id": "isa_maturity_pension_transfer_deadline",
+      "template_family_id": "legacy_template_24",
+      "source_lineage_family": "isa_transfer_guidance",
+      "scenario_axes": [
+        "negation",
+        "anchor_control"
+      ],
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "test_type": "MFT",
+      "parent_case_id": null,
+      "relation": "independent",
+      "question": "ISA가 끝났지만 연금계좌로 넣지 않을 예정입니다.",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [
+        "procedure"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "60일"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "provenance": {
+        "origin": "legacy_failure_analysis",
+        "reviewer": "repository_regression_review",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-CONTRIBUTION-DELAY-002",
+      "domain": "contribution_onboarding",
+      "semantic_family_id": "dc_contribution_delay_interest",
+      "template_family_id": "stress_direct_consequence_01",
+      "source_lineage_family": "dc_contribution_delay_guidance",
+      "scenario_axes": [
+        "direct_paraphrase",
+        "implicit_official_term"
+      ],
+      "test_type": "INV",
+      "parent_case_id": "LIFE-CONTRIBUTION-DELAY-001",
+      "relation": "semantic_invariant",
+      "question": "DC 회사 적립금이 제 날짜에 안 들어오면 어떻게 대응하나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "부담금",
+        "지연이자"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc17",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "3dd751efbb9f2d91219052a4df28d3a269c0760c6fd0870d64d3534a4b90446f"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-TRANSFER-REDEMPTION-002",
+      "domain": "transfer_portability",
+      "semantic_family_id": "in_kind_pension_transfer",
+      "template_family_id": "stress_direct_consequence_02",
+      "source_lineage_family": "in_kind_transfer_guidance",
+      "scenario_axes": [
+        "direct_paraphrase",
+        "implicit_official_term"
+      ],
+      "test_type": "INV",
+      "parent_case_id": "LIFE-TRANSFER-SELL-001",
+      "relation": "semantic_invariant",
+      "question": "개인형퇴직연금을 타 증권사 쪽으로 옮겨갈 때 보유 펀드 환매가 필수인가요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [
+        "product_explanation"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "실물이전"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc35",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "e53ac5c565df2066e126cf2dcaedb6a8783a0d1f259697b268020c65ac846889"
+        },
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc34",
+          "locator": "sheet=SHEET",
+          "chunk_index": 2,
+          "content_sha256": "3aa48393ba98152ac90609aa36c9aed9b933ebadcd21dcb749c91251dab1aa79"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-WITHDRAWAL-HOUSE-002",
+      "domain": "withdrawal_liquidity",
+      "semantic_family_id": "pension_house_purchase_withdrawal",
+      "template_family_id": "stress_direct_consequence_03",
+      "source_lineage_family": "house_withdrawal_guidance",
+      "scenario_axes": [
+        "direct_paraphrase",
+        "implicit_official_term"
+      ],
+      "test_type": "INV",
+      "parent_case_id": "LIFE-WITHDRAWAL-HOUSE-001",
+      "relation": "semantic_invariant",
+      "question": "주거용 집 마련에 IRP 일부를 당겨 받아도 되나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "중도인출",
+        "주택 구입"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc49",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "a6b3f4d5d58df79c0aab2010b579ce320fe7b7895b8972c79b266468257f0ec5"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-WITHDRAWAL-MEDICAL-002",
+      "domain": "withdrawal_liquidity",
+      "semantic_family_id": "pension_medical_withdrawal",
+      "template_family_id": "stress_direct_consequence_04",
+      "source_lineage_family": "medical_withdrawal_guidance",
+      "scenario_axes": [
+        "direct_paraphrase",
+        "implicit_official_term"
+      ],
+      "test_type": "INV",
+      "parent_case_id": "LIFE-WITHDRAWAL-MEDICAL-001",
+      "relation": "semantic_invariant",
+      "question": "치료비 마련하려 퇴직연금 일부를 당겨 받을 수 있나요?",
+      "required_route_labels": [
+        "system",
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "중도인출",
+        "요양"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc46",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "ef5df66c3188573551cb2d1d034ca1ea913dbb6f88d1a9cdb87e9987fead7e48"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-CONTRIBUTION-ISA-002",
+      "domain": "contribution_onboarding",
+      "semantic_family_id": "isa_maturity_pension_transfer_deadline",
+      "template_family_id": "stress_direct_consequence_05",
+      "source_lineage_family": "isa_transfer_guidance",
+      "scenario_axes": [
+        "direct_paraphrase",
+        "implicit_official_term"
+      ],
+      "test_type": "INV",
+      "parent_case_id": "LIFE-CONTRIBUTION-ISA-001",
+      "relation": "semantic_invariant",
+      "question": "ISA 만기 대금을 개인형퇴직연금 쪽으로 넘기는 기한이 있나요?",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "ISA",
+        "60일"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc33",
+          "locator": "slide=2",
+          "chunk_index": 2,
+          "content_sha256": "a28f22a4fb97b76a3efaad2c8464b4e40be537f51cdea436e4a51f0e39d020db"
+        },
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc23",
+          "locator": "unavailable",
+          "chunk_index": 1,
+          "content_sha256": "ee231dad3ef919a4e0c5e3f916d5395114d7416da7bd316fd00ce93948915344"
+        },
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc4",
+          "locator": "page=2",
+          "chunk_index": 2,
+          "content_sha256": "d28f762f02e56f39d7501bc60b9ebb8a7156159276431fe1b111b9d80d83026a"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-PAYOUT-LUMP-SUM-002",
+      "domain": "retirement_payout",
+      "semantic_family_id": "pension_withdrawal_limit_tax",
+      "template_family_id": "stress_direct_consequence_06",
+      "source_lineage_family": "payout_limit_guidance",
+      "scenario_axes": [
+        "direct_paraphrase",
+        "implicit_official_term"
+      ],
+      "test_type": "INV",
+      "parent_case_id": "LIFE-PAYOUT-LIMIT-001",
+      "relation": "semantic_invariant",
+      "question": "IRP에서 몽땅 수령하면 세금 처리가 달라지나요?",
+      "required_route_labels": [
+        "system",
+        "tax",
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "연금수령한도"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc39",
+          "locator": "unavailable",
+          "chunk_index": 2,
+          "content_sha256": "ad45a59cd2fc3e5e55ac70acf474ba3cea6adc03eb166f4a761c169a90f06590"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-PROTECTION-DIRECT-CLAIM-002",
+      "domain": "protection_remedies",
+      "semantic_family_id": "unpaid_retirement_direct_claim",
+      "template_family_id": "stress_direct_consequence_07",
+      "source_lineage_family": "direct_claim_guidance",
+      "scenario_axes": [
+        "direct_paraphrase",
+        "implicit_official_term"
+      ],
+      "test_type": "INV",
+      "parent_case_id": "LIFE-PROTECTION-DIRECT-CLAIM-001",
+      "relation": "semantic_invariant",
+      "question": "사업주가 폐업해 퇴직급여가 밀리면 금융사에 바로 요구할 수 있나요?",
+      "required_route_labels": [
+        "procedure"
+      ],
+      "forbidden_route_labels": [],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [
+        "직접청구",
+        "지급누락"
+      ],
+      "forbidden_query_terms": [],
+      "expected_evidence_status": "answerable",
+      "expected_should_generate": true,
+      "qrels": [
+        {
+          "granularity": "locator_chunk",
+          "source_id": "doc57",
+          "locator": "page=1",
+          "chunk_index": 1,
+          "content_sha256": "75ca5b43558739c538ec2eab42901ebbd0e6efe05cbc82ed390847bba3320914"
+        }
+      ],
+      "minimum_relevant_qrels": 1,
+      "requires_qrel_support": true,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-NEG-NO-TRANSFER-002",
+      "domain": "transfer_portability",
+      "semantic_family_id": "in_kind_pension_transfer",
+      "template_family_id": "stress_negation_01",
+      "source_lineage_family": "in_kind_transfer_guidance",
+      "scenario_axes": [
+        "negation",
+        "multi_intent",
+        "anchor_control"
+      ],
+      "test_type": "DIR",
+      "parent_case_id": "LIFE-TRANSFER-SELL-001",
+      "relation": "directional_contrast",
+      "question": "IRP를 타사로 옮기는 일은 안 하려고요. 세액공제만 설명해 주세요.",
+      "required_route_labels": [
+        "system",
+        "tax"
+      ],
+      "forbidden_route_labels": [
+        "procedure"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "실물이전"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-NEG-NO-MEDICAL-002",
+      "domain": "withdrawal_liquidity",
+      "semantic_family_id": "pension_medical_withdrawal",
+      "template_family_id": "stress_negation_02",
+      "source_lineage_family": "medical_withdrawal_guidance",
+      "scenario_axes": [
+        "negation",
+        "anchor_control"
+      ],
+      "test_type": "DIR",
+      "parent_case_id": "LIFE-WITHDRAWAL-MEDICAL-001",
+      "relation": "directional_contrast",
+      "question": "병원비에 IRP를 쓰는 건 안 할 거예요. 계좌 유지 방법만 알려주세요.",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [
+        "procedure"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "중도인출"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-NEG-NO-ISA-002",
+      "domain": "contribution_onboarding",
+      "semantic_family_id": "isa_maturity_pension_transfer_deadline",
+      "template_family_id": "stress_negation_03",
+      "source_lineage_family": "isa_transfer_guidance",
+      "scenario_axes": [
+        "negation",
+        "choice_shift",
+        "anchor_control"
+      ],
+      "test_type": "DIR",
+      "parent_case_id": "LIFE-CONTRIBUTION-ISA-001",
+      "relation": "directional_contrast",
+      "question": "ISA 만기금을 연금계좌로 전환할 의향은 없습니다. 다른 선택지만 알려주세요.",
+      "required_route_labels": [
+        "system"
+      ],
+      "forbidden_route_labels": [
+        "procedure"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "60일"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    },
+    {
+      "case_id": "STRESS-NEG-NO-BANKRUPTCY-002",
+      "domain": "protection_remedies",
+      "semantic_family_id": "unpaid_retirement_direct_claim",
+      "template_family_id": "stress_negation_04",
+      "source_lineage_family": "direct_claim_guidance",
+      "scenario_axes": [
+        "negation",
+        "scope_shift",
+        "anchor_control"
+      ],
+      "test_type": "DIR",
+      "parent_case_id": "LIFE-PROTECTION-DIRECT-CLAIM-001",
+      "relation": "directional_contrast",
+      "question": "회사 도산은 피해야죠. 퇴직급여 제도의 큰 흐름만 설명해 주세요.",
+      "required_route_labels": [],
+      "forbidden_route_labels": [
+        "procedure"
+      ],
+      "expected_source_groups": [
+        "general"
+      ],
+      "required_query_terms": [],
+      "forbidden_query_terms": [
+        "직접청구"
+      ],
+      "expected_evidence_status": null,
+      "expected_should_generate": null,
+      "qrels": [],
+      "minimum_relevant_qrels": 0,
+      "requires_qrel_support": false,
+      "coverage_tags": {
+        "as_of": "unspecified",
+        "audience": "customer"
+      },
+      "provenance": {
+        "origin": "cross_agent_adversarial_development",
+        "reviewer": "role_separated_not_independent_validation",
+        "review_status": "development_only"
+      }
+    }
+  ]
+}

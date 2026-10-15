@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "SUIT-INCOMPLETE-001",
+      "question": "IRP에서 20년 투자할 상품을 추천해 주세요.",
+      "expected_status": "needs_conditions",
+      "required_conditions_contains": [
+        "손실 감내 능력과 위험 선호",
+        "유동성 또는 중도인출 계획",
+        "노후자금 목표"
+      ],
+      "expected_candidate_codes": [],
+      "allowed_risk_grades": [],
+      "allowed_categories": []
+    },
+    {
+      "case_id": "SUIT-AGGRESSIVE-GROWTH-001",
+      "question": "IRP 계좌에서 20년 투자하고 손실 위험을 감수할 수 있습니다. 중도인출 계획은 없고 노후자금 성장 목표에 맞는 상품을 추천해 주세요.",
+      "expected_status": "candidate_shortlist",
+      "required_conditions_contains": [],
+      "expected_candidate_codes": [
+        "KR5153450209",
+        "KR5153450009",
+        "KR5153450791"
+      ],
+      "allowed_risk_grades": [1, 2, 3, 4, 5, 6],
+      "allowed_categories": ["equity", "mixed", "target_date"]
+    },
+    {
+      "case_id": "SUIT-CONSERVATIVE-PRESERVATION-001",
+      "question": "연금저축 계좌에서 10년 투자하고 보수적으로 원금 보전을 중시합니다. 중도인출 계획은 없고 안정적 운용 목표의 상품을 추천해 주세요.",
+      "expected_status": "candidate_shortlist",
+      "required_conditions_contains": [],
+      "expected_candidate_codes": [
+        "KR5118420062",
+        "KR5111420047",
+        "KR5118201004"
+      ],
+      "allowed_risk_grades": [5, 6],
+      "allowed_categories": ["bond"]
+    },
+    {
+      "case_id": "SUIT-DB-OWNERSHIP-001",
+      "question": "DB형 계좌에서 20년 투자하고 공격적으로 손실을 감내할 수 있으며 중도인출 계획은 없고 노후자금 성장 목표의 상품을 추천해 주세요.",
+      "expected_status": "needs_conditions",
+      "required_conditions_contains": [
+        "DB형에서 개인이 운용상품을 선택하는 상황인지 확인"
+      ],
+      "expected_candidate_codes": [],
+      "allowed_risk_grades": [],
+      "allowed_categories": []
+    },
+    {
+      "case_id": "SUIT-LIQUIDITY-CONFLICT-001",
+      "question": "IRP 계좌에서 20년 투자하고 공격적으로 손실을 감내할 수 있습니다. 긴급자금이 필요하고 노후자금 성장 목표의 상품을 추천해 주세요.",
+      "expected_status": "needs_conditions",
+      "required_conditions_contains": [
+        "필요 인출 시점과 법정 중도인출 사유 해당 여부"
+      ],
+      "expected_candidate_codes": [],
+      "allowed_risk_grades": [],
+      "allowed_categories": []
+    }
+  ]
+}

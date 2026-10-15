@@ -1,0 +1,76 @@
+.env
+.env.*
+!.env.example
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite*
+*.db
+*.bundle
+*.bak
+*.zip
+*.tar
+*.tar.gz
+.ssh/
+.aws/
+.claude/
+.codex/
+.grok/
+credentials*.json
+*service-account*.json
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+data/runtime/*
+!data/runtime/.gitkeep
+
+# Rebuilt atomically from the checked organizer-derived corpus.
+data/.knowledge.build-*/
+data/.knowledge.previous-*/
+
+# Organizer materials are large and may not be published. Keep the manifest,
+# but submit the raw package only through the organizer-approved private channel.
+docs/official/original/
+docs/official/extracted/
+docs/official/*.pdf
+
+*.log
+
+# Benchmark reports are reproducible run artifacts, not source inputs.
+benchmarks/results/*.json
+!benchmarks/results/.gitkeep
+
+# Local handoff and editorial work notes are not submission documents.
+docs/devlop/operations/HANDOFF.md
+docs/devlop/operations/performance-improvement-log.md
+docs/devlop/operations/SUBMISSION_REVIEW_*.md
+docs/devlop/research/korean-readme-style-analysis.md
+
+# Organizer operating announcements are their own material, kept locally only.
+docs/official/DISCORD_ANNOUNCEMENTS.md
+docs/official/SUBMISSION_NOTICE.md
+docs/official/HEALTHCHECK_NOTICE.md
+
+# Organizer-supplied materials stay local.
+docs/official/
+docs/README.md
+
+# Internal development notes and agent working instructions stay local.
+docs/devlop/
+agents/skills/
+agents/workbench/
+AGENTS.md
+
+# Restricted source documents, derived corpus/indexes and runtime state stay local.
+data/**
+!data/knowledge/
+!data/knowledge/.gitkeep
+!data/structured/
+!data/structured/.gitkeep
+!data/runtime/
+!data/runtime/.gitkeep

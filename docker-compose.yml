@@ -1,0 +1,40 @@
+services:
+  pension-agent:
+    build:
+      context: .
+      target: runtime
+    env_file:
+      - .env
+    ports:
+      - "${HOST_PORT:-80}:8000"
+    volumes:
+      - pension-runtime:/app/data/runtime
+    restart: unless-stopped
+    stop_grace_period: 300s
+
+  prepare-knowledge:
+    profiles: ["tools"]
+    build:
+      context: .
+      target: tools
+    user: "0:0"
+    command: ["python", "scripts/prepare_knowledge.py", "--ocr"]
+    volumes:
+      # The builder stages beside data/knowledge and atomically swaps the
+      # directory. Mount data/ as one filesystem so neither rename crosses a
+      # bind-mount boundary and data/knowledge is not itself a mount point.
+      - ./data:/app/data
+
+  prepare-product-evidence:
+    profiles: ["tools"]
+    build:
+      context: .
+      target: tools
+    user: "0:0"
+    command: ["python", "scripts/extract_product_facts.py"]
+    volumes:
+      - ./data/knowledge:/app/data/knowledge:ro
+      - ./data/structured:/app/data/structured
+
+volumes:
+  pension-runtime:

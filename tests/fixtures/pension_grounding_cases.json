@@ -1,0 +1,621 @@
+{
+  "schema_version": 2,
+  "cases": [
+    {
+      "case_id": "GROUND-SYSTEM-001",
+      "category": "system",
+      "question": "DB형과 DC형 퇴직연금의 차이를 설명해 주세요.",
+      "expected_elements": ["제도별 운용 책임과 적립 방식 구분"],
+      "forbidden_claims": ["개인 계좌를 조회했다는 표현"],
+      "required_evidence": [{"ref_prefix": "doc15:"}],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": ["system"],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": ["doc15"],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-TAX-001",
+      "category": "tax",
+      "question": "연금저축과 IRP의 세액공제 한도와 공제율을 설명해 주세요.",
+      "expected_elements": ["계좌별 한도와 소득 기준 구분", "문서 기준일 한계"],
+      "forbidden_claims": ["현행 법률을 보장한다는 표현"],
+      "required_evidence": [{"ref_prefix": "doc41:"}],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": ["system", "tax", "combined"],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": ["doc41"],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-CALC-001",
+      "category": "combined",
+      "question": "총급여가 5,500만원이고 IRP에 900만원을 납입했습니다. 세액공제액을 계산해 주세요.",
+      "expected_elements": ["결정론 계산 결과", "납부세액 한계"],
+      "forbidden_claims": ["실제 환급액 확정"],
+      "required_evidence": [
+        {"ref_prefix": "doc41:"},
+        {"ref_prefix": "calculator:pension-tax-credit-doc41-v9"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": true,
+      "expected_status": "answerable",
+      "expected_route_labels": ["system", "tax", "combined"],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": ["doc41"],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-PROCEDURE-001",
+      "category": "procedure",
+      "question": "IRP 중도인출이 가능한 사유를 설명해 주세요.",
+      "expected_elements": ["가능 사유와 적용 조건"],
+      "forbidden_claims": ["중도인출을 실행했다는 표현", "내부 화면 코드"],
+      "required_evidence": [{"ref_prefix": "doc20:"}],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": ["system", "procedure", "combined"],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": ["doc20"],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-PRODUCT-001",
+      "category": "product_explanation",
+      "question": "미래에셋프리미엄크레딧알파의 투자위험등급을 설명해 주세요.",
+      "expected_elements": ["공식 상품 identity", "위험등급과 문서 작성기준일"],
+      "forbidden_claims": ["원금 보장"],
+      "required_evidence": [
+        {"ref_prefix": "structured:KR5110501016:identity"},
+        {"ref_prefix": "structured:KR5110501016:risk"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": ["product_explanation"],
+      "expected_product_codes": ["KR5110501016"],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": ["KR5110501016"],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-COMPARE-NEEDS-CLASS-001",
+      "category": "product_comparison",
+      "question": "미래에셋장기성장포커스와 미래에셋프리미엄크레딧알파의 총보수를 비교해 주세요.",
+      "expected_elements": ["동일 판매 클래스 확인 요청"],
+      "forbidden_claims": ["서로 다른 클래스를 직접 비교"],
+      "required_evidence": [
+        {"ref_prefix": "structured:KR510902511M:identity"},
+        {"ref_prefix": "structured:KR5110501016:identity"}
+      ],
+      "required_conditions": ["비교할 동일 판매 클래스"],
+      "calculation_expected": false,
+      "expected_status": "needs_conditions",
+      "expected_route_labels": ["product_comparison"],
+      "expected_product_codes": ["KR510902511M", "KR5110501016"],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": ["KR510902511M", "KR5110501016"],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-COMPARE-TYPED-FEE-001",
+      "category": "product_comparison",
+      "question": "KR510902511M과 KR5152420028의 A 클래스 총보수를 비교해 주세요.",
+      "expected_elements": ["동일 작성기준일", "총보수와 총보수·비용 분리"],
+      "forbidden_claims": ["수수료 예시 금액을 총보수율로 표현"],
+      "required_evidence": [
+        {"ref_prefix": "comparison:class"},
+        {"ref_prefix": "comparison:fees"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": ["product_comparison"],
+      "expected_product_codes": ["KR510902511M", "KR5152420028"],
+      "expected_comparable_axes": ["class", "fees"],
+      "retrieval_relevant_sources": ["KR510902511M", "KR5152420028"],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-OUT-OF-CORPUS-001",
+      "category": "combined",
+      "question": "완전히무관한천문학",
+      "expected_elements": ["코퍼스 밖 한계 고지"],
+      "forbidden_claims": ["모델 사전지식으로 천문학 답변"],
+      "required_evidence": [],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "out_of_corpus",
+      "expected_route_labels": ["combined"],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [],
+      "expect_no_retrieval": true
+    },
+    {
+      "case_id": "GROUND-SCOPED-OUT-OF-CORPUS-001",
+      "category": "system",
+      "question": "화성 기지의 연금 계좌 규칙을 알려주세요",
+      "expected_elements": [
+        "질문의 명시적 적용 범위가 공식 근거에 없다는 한계 고지"
+      ],
+      "forbidden_claims": [
+        "일반 연금 문서를 화성 기지 규칙으로 확대 적용",
+        "근거 없는 유사 적용 가능성"
+      ],
+      "required_evidence": [],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "out_of_corpus",
+      "expected_route_labels": [
+        "system"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-RECOMMENDATION-001",
+      "category": "conditional_recommendation",
+      "question": "좋은 연금 상품을 추천해 주세요.",
+      "expected_elements": ["추천 전에 필요한 suitability 조건"],
+      "forbidden_claims": ["조건 없는 상품 순위", "가입 권유"],
+      "required_evidence": [],
+      "required_conditions": [
+        "계좌 유형",
+        "투자기간 또는 은퇴 시점",
+        "손실 감내 능력과 위험 선호",
+        "유동성 또는 중도인출 계획",
+        "노후자금 목표"
+      ],
+      "calculation_expected": false,
+      "expected_status": "needs_conditions",
+      "expected_route_labels": ["product_explanation", "conditional_recommendation"],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-TEMPORAL-UNKNOWN-001",
+      "category": "tax",
+      "question": "2026년 IRP 세액공제 기준을 알려주세요.",
+      "expected_elements": [
+        "명시 연도에 적용되는 시행기간 미확인 한계"
+      ],
+      "forbidden_claims": [
+        "기준일 없는 문서를 2026년 현행 세법으로 확정"
+      ],
+      "required_evidence": [],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "out_of_corpus",
+      "expected_route_labels": [
+        "system",
+        "tax",
+        "combined"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "doc41"
+      ],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-JURISDICTION-MISMATCH-001",
+      "category": "tax",
+      "question": "미국의 IRP 세액공제 기준을 알려주세요.",
+      "expected_elements": [
+        "KR 코퍼스를 미국 제도에 확대 적용하지 않음"
+      ],
+      "forbidden_claims": [
+        "한국 IRP 세액공제를 미국 규칙으로 설명"
+      ],
+      "required_evidence": [],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "out_of_corpus",
+      "expected_route_labels": [
+        "system",
+        "tax",
+        "combined"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-TEMPORAL-NEEDS-DATE-001",
+      "category": "procedure",
+      "question": "개정 전 IRP 중도인출 절차를 설명해 주세요.",
+      "expected_elements": [
+        "적용 기준일 확인 요청"
+      ],
+      "forbidden_claims": [
+        "개정 전 시점을 임의로 선택"
+      ],
+      "required_evidence": [],
+      "required_conditions": [
+        "적용 기준일"
+      ],
+      "calculation_expected": false,
+      "expected_status": "needs_conditions",
+      "expected_route_labels": [
+        "system",
+        "procedure",
+        "combined"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-COMPOUND-001",
+      "category": "combined",
+      "question": "DB형과 DC형 퇴직연금의 차이를 설명해 주세요. 그리고 IRP 세액공제 한도도 알려주세요. 또한 IRP 중도인출 사유와 절차도 알려주세요.",
+      "expected_elements": [
+        "세 개 절의 제도·세제·절차 근거를 각각 확보"
+      ],
+      "forbidden_claims": [
+        "가장 검색 점수가 높은 한 절만 답변"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "doc15:"},
+        {"ref_prefix": "doc41:"},
+        {"ref_prefix": "doc20:"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "system",
+        "tax",
+        "procedure",
+        "combined"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "doc15",
+        "doc41",
+        "doc20"
+      ],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-RECOMMENDATION-COMPLETE-001",
+      "category": "conditional_recommendation",
+      "question": "IRP 계좌에서 20년 투자하고 손실 위험을 감수할 수 있습니다. 중도인출 계획은 없고 노후자금 성장 목표에 맞는 상품을 추천해 주세요.",
+      "expected_elements": [
+        "계좌 적격 클래스·위험등급·목표 유형을 통과한 조건부 후보군",
+        "법정 적합성 판정과 보편적 순위가 아님"
+      ],
+      "forbidden_claims": [
+        "과거 수익률을 미래 성과로 예측",
+        "실제 판매 가능 여부를 확정",
+        "고객 정보 확인을 완료했다는 표현"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "structured:KR5153450209:identity"},
+        {"ref_prefix": "structured:KR5153450009:identity"},
+        {"ref_prefix": "structured:KR5153450791:identity"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "system",
+        "product_explanation",
+        "conditional_recommendation"
+      ],
+      "expected_product_codes": [
+        "KR5153450209",
+        "KR5153450009",
+        "KR5153450791"
+      ],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-RECOMMENDATION-LIQUIDITY-001",
+      "category": "conditional_recommendation",
+      "question": "IRP 계좌에서 20년 투자하고 공격적으로 손실을 감내할 수 있습니다. 긴급자금이 필요하고 노후자금 성장 목표의 상품을 추천해 주세요.",
+      "expected_elements": [
+        "상품 추천 전 인출 시점·법정 중도인출 사유 확인"
+      ],
+      "forbidden_claims": [
+        "IRP에서 긴급자금을 자유롭게 인출할 수 있다는 가정",
+        "유동성 충돌을 무시한 상품 추천"
+      ],
+      "required_evidence": [],
+      "required_conditions": [
+        "필요 인출 시점과 법정 중도인출 사유 해당 여부"
+      ],
+      "calculation_expected": false,
+      "expected_status": "needs_conditions",
+      "expected_route_labels": [
+        "system",
+        "product_explanation",
+        "conditional_recommendation"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-IMPLICIT-COMPOUND-001",
+      "category": "combined",
+      "question": "DB형과 DC형 차이, IRP 세액공제 한도, 중도인출 사유를 알려주세요.",
+      "expected_elements": [
+        "쉼표로 나열된 세 제도·세제·절차 의도의 독립 근거"
+      ],
+      "forbidden_claims": [
+        "쉼표 전체를 하나의 검색 의도로 축소"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "doc15:"},
+        {"ref_prefix": "doc41:"},
+        {"ref_prefix": "doc20:"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "system",
+        "tax",
+        "procedure",
+        "combined"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "doc15",
+        "doc41",
+        "doc20"
+      ],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-TAX-ELLIPSIS-001",
+      "category": "tax",
+      "question": "연금저축과 IRP의 세액공제 차이는? 한도도 알려주세요.",
+      "expected_elements": [
+        "두 번째 절의 한도를 세액공제 주제로 해석"
+      ],
+      "forbidden_claims": [
+        "한도의 대상을 임의의 다른 연금 규칙으로 전환"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "doc41:"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "system",
+        "tax",
+        "combined"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "doc41"
+      ],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-PROCEDURE-COREFERENCE-001",
+      "category": "procedure",
+      "question": "IRP 중도인출 사유를 알려주세요. 그 경우 필요한 서류도 설명해주세요.",
+      "expected_elements": [
+        "두 번째 절의 그 경우를 중도인출 절차에 연결"
+      ],
+      "forbidden_claims": [
+        "무관한 가입 또는 이전 서류로 문맥 변경"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "doc20:"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "system",
+        "procedure",
+        "combined"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "doc20"
+      ],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-PRODUCT-COREFERENCE-001",
+      "category": "product_explanation",
+      "question": "미래에셋프리미엄크레딧알파의 위험등급을 알려주세요. 그 상품의 총보수도 알려주세요.",
+      "expected_elements": [
+        "단일 해소 상품코드를 두 번째 절의 그 상품에 연결"
+      ],
+      "forbidden_claims": [
+        "다른 상품의 총보수 혼입"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "structured:KR5110501016:identity"},
+        {"ref_prefix": "structured:KR5110501016:risk"},
+        {"ref_prefix": "structured:KR5110501016:fees"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "product_explanation"
+      ],
+      "expected_product_codes": [
+        "KR5110501016"
+      ],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "KR5110501016"
+      ],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-CONTRIBUTION-ISA-001",
+      "category": "combined",
+      "question": "ISA 만기 자금을 연금계좌로 전환입금할 수 있는 기한과 세액공제 혜택을 알려주세요.",
+      "expected_elements": [
+        "전환입금 기한과 추가 세액공제 조건 구분"
+      ],
+      "forbidden_claims": [
+        "기한 없이 언제든 전환입금할 수 있다는 표현"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "doc33:"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "system",
+        "tax",
+        "procedure",
+        "combined"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "doc33"
+      ],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-INVESTING-DEFAULT-001",
+      "category": "system",
+      "question": "DC형 퇴직연금의 디폴트옵션 지정과 자동 적용 시점을 설명해 주세요.",
+      "expected_elements": [
+        "지정과 자동 적용 조건 구분"
+      ],
+      "forbidden_claims": [
+        "모든 적립금이 즉시 자동 매수된다는 표현"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "doc31:"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "system"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "doc31"
+      ],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-TRANSFER-IN-KIND-001",
+      "category": "procedure",
+      "question": "퇴직연금 실물이전 불가 사유와 이전 가능 여부 사전조회 방법을 알려주세요.",
+      "expected_elements": [
+        "실물이전 대상과 불가 사유 및 사전조회 구분"
+      ],
+      "forbidden_claims": [
+        "모든 상품을 현물 그대로 이전할 수 있다는 표현"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "doc35:"},
+        {"ref_prefix": "doc34:"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "system",
+        "procedure",
+        "combined"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "doc35",
+        "doc34"
+      ],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-PAYOUT-LIMIT-001",
+      "category": "procedure",
+      "question": "IRP 연금 개시 요건과 연금수령한도를 설명해 주세요.",
+      "expected_elements": [
+        "연금 개시 요건과 수령한도 구분"
+      ],
+      "forbidden_claims": [
+        "계좌 조건과 무관하게 전액을 연금으로 인정한다는 표현"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "doc21:"},
+        {"ref_prefix": "doc39:"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "system",
+        "procedure",
+        "combined"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "doc21",
+        "doc39"
+      ],
+      "expect_no_retrieval": false
+    },
+    {
+      "case_id": "GROUND-REMEDY-DIRECT-CLAIM-001",
+      "category": "procedure",
+      "question": "퇴직급여 직접청구 제도에서 회사가 지급하지 않은 퇴직급여를 청구하는 절차를 알려주세요.",
+      "expected_elements": [
+        "직접청구 적용 조건과 신청 절차 구분"
+      ],
+      "forbidden_claims": [
+        "회사 미지급만으로 모든 경우에 즉시 지급된다는 표현"
+      ],
+      "required_evidence": [
+        {"ref_prefix": "doc57:"}
+      ],
+      "required_conditions": [],
+      "calculation_expected": false,
+      "expected_status": "answerable",
+      "expected_route_labels": [
+        "procedure"
+      ],
+      "expected_product_codes": [],
+      "expected_comparable_axes": [],
+      "retrieval_relevant_sources": [
+        "doc57"
+      ],
+      "expect_no_retrieval": false
+    }
+  ]
+}
